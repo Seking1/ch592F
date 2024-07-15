@@ -1,0 +1,3081 @@
+
+ADCt.elf:     file format elf32-littleriscv
+ADCt.elf
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000000
+
+Program Header:
+    LOAD off    0x00001000 vaddr 0x00000000 paddr 0x00000000 align 2**12
+         filesz 0x00000004 memsz 0x00000004 flags r-x
+    LOAD off    0x00002000 vaddr 0x20000000 paddr 0x00000004 align 2**12
+         filesz 0x000008d8 memsz 0x000008d8 flags r-x
+    LOAD off    0x000028dc vaddr 0x000008dc paddr 0x000008dc align 2**12
+         filesz 0x000008cc memsz 0x000008cc flags r-x
+    LOAD off    0x000038d8 vaddr 0x200008d8 paddr 0x000011a8 align 2**12
+         filesz 0x00000000 memsz 0x00000014 flags rw-
+
+Sections:
+Idx Name            Size      VMA       LMA       File off  Algn  Flags
+  0 .init           00000004  00000000  00000000  00001000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .highcodelalign 00000000  00000004  00000004  000031a8  2**0  CONTENTS
+  2 .highcode       000008d8  20000000  00000004  00002000  2**1  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .text           000008cc  000008dc  000008dc  000028dc  2**2  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .fini           00000000  000011a8  000011a8  000031a8  2**0  CONTENTS, ALLOC, LOAD, CODE
+  5 .dalign         00000000  200008d8  200008d8  000031a8  2**0  CONTENTS
+  6 .dlalign        00000000  000011a8  000011a8  000031a8  2**0  CONTENTS
+  7 .data           00000000  200008d8  200008d8  000031a8  2**0  CONTENTS, ALLOC, LOAD, DATA
+  8 .bss            00000014  200008d8  000011a8  000038d8  2**2  ALLOC
+  9 .stack          00000000  20006800  20006800  000031a8  2**0  CONTENTS
+ 10 .debug_info     00006a3f  00000000  00000000  000031a8  2**0  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_abbrev   00001286  00000000  00000000  00009be7  2**0  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc      000017af  00000000  00000000  0000ae6d  2**0  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_aranges  00000268  00000000  00000000  0000c620  2**3  CONTENTS, READONLY, DEBUGGING
+ 14 .debug_ranges   000002c8  00000000  00000000  0000c888  2**3  CONTENTS, READONLY, DEBUGGING
+ 15 .debug_line     00003fc8  00000000  00000000  0000cb50  2**0  CONTENTS, READONLY, DEBUGGING
+ 16 .debug_str      0000125f  00000000  00000000  00010b18  2**0  CONTENTS, READONLY, DEBUGGING
+ 17 .comment        00000033  00000000  00000000  00011d77  2**0  CONTENTS, READONLY
+ 18 .debug_frame    00000548  00000000  00000000  00011dac  2**2  CONTENTS, READONLY, DEBUGGING
+ 19 .stabstr        00000117  00000000  00000000  000122f4  2**0  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+00000000 l    d  .init	00000000 .init
+00000004 l    d  .highcodelalign	00000000 .highcodelalign
+20000000 l    d  .highcode	00000000 .highcode
+000008dc l    d  .text	00000000 .text
+000011a8 l    d  .fini	00000000 .fini
+200008d8 l    d  .dalign	00000000 .dalign
+000011a8 l    d  .dlalign	00000000 .dlalign
+200008d8 l    d  .data	00000000 .data
+200008d8 l    d  .bss	00000000 .bss
+20006800 l    d  .stack	00000000 .stack
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    d  .stabstr	00000000 .stabstr
+00000000 l    df *ABS*	00000000 ./Startup/startup_CH592.o
+20000000 l       .highcode	00000000 _vector_base
+00000000 l    df *ABS*	00000000 CH59x_sys.c
+00000000 l    df *ABS*	00000000 ISP583.c
+200004c4 l       .highcode	00000000 .loop18
+200004d2 l       .highcode	00000000 .loop29
+200004e0 l       .highcode	00000000 .loop40
+2000076c l       .highcode	00000000 .loop402
+00000000 l    df *ABS*	00000000 Main.c
+00000000 l    df *ABS*	00000000 lcd.c
+00000a0e l     F .text	0000006e Write_Data_H
+00000a7c l     F .text	00000044 WriteCmd
+00000ac0 l     F .text	0000006a lcd_xdigital
+00000b2a l     F .text	0000008a lcd_flag
+00000bb4 l     F .text	0000001a lcd_blank
+00000bce l     F .text	00000084 lcd_xdigitals
+00000c52 l     F .text	000000be lcd_flush
+200008dc l     O .bss	00000010 gs_lcd_ram
+00001154 l     O .text	0000000b flag_addr
+00001160 l     O .text	0000000b flag_data
+0000116c l     O .text	00000012 xdigital_addr
+00001180 l     O .text	00000014 xdigital_data
+00000000 l    df *ABS*	00000000 CH59x_adc.c
+00000000 l    df *ABS*	00000000 CH59x_gpio.c
+00000000 l    df *ABS*	00000000 CH59x_uart3.c
+00000000 l    df *ABS*	00000000 memcpy.c
+00000000 l    df *ABS*	00000000 close.c
+00001012 g     F .text	00000030 UART3_BaudRateCfg
+200004e0 g     F .highcode	0000000e FLASH_ROM_OUT
+00001042 g     F .text	00000032 UART3_DefInit
+200010d8 g       .data	00000000 __global_pointer$
+00000eae g     F .text	00000034 ADC_InterTSSampInit
+2000047c g     F .highcode	0000000e mDelayuS
+200003aa  w    F .highcode	000000d2 HardFault_Handler
+20000090  w      .highcode	00000000 GPIOB_IRQHandler
+20000090  w      .highcode	00000000 GPIOA_IRQHandler
+20000090  w      .highcode	00000000 SysTick_Handler
+20000090  w      .highcode	00000000 NMI_Handler
+00000f04 g     F .text	00000028 adc_to_temperature_celsius
+20000090  w      .highcode	00000000 UART1_IRQHandler
+00000d1c g     F .text	00000102 lcd_disp_num
+200008d8 g       .bss	00000000 _sbss
+200004d2 g     F .highcode	0000000e FLASH_ROM_IN
+20000090  w      .highcode	00000000 UART0_IRQHandler
+0000109c g     F .text	000000b6 memcpy
+00000ee2 g     F .text	00000022 ADC_ExcutSingleConver
+00000004 g       .init	00000000 _einit
+20000090  w      .highcode	00000000 BB_IRQHandler
+2000056e g     F .highcode	0000036a FLASH_EEPROM_CMD
+20000090  w      .highcode	00000000 Break_Point_Handler
+20000090  w      .highcode	00000000 TMR0_IRQHandler
+200004b2 g     F .highcode	00000012 FLASH_ROM_BEG
+2000048a g     F .highcode	00000028 mDelaymS
+20000090  w      .highcode	00000000 Ecall_M_Mode_Handler
+200004ee g     F .highcode	00000048 FLASH_ROM_ADDR
+20000090  w      .highcode	00000000 RTC_IRQHandler
+200008ec g       .bss	00000000 _ebss
+20000536 g     F .highcode	00000038 FLASH_ROM_WAIT
+200008ec g       .bss	00000000 end
+20000090  w      .highcode	00000000 UART2_IRQHandler
+20000090  w      .highcode	00000000 PWMX_IRQHandler
+00000000 g       .init	00000000 _start
+20000090  w      .highcode	00000000 ADC_IRQHandler
+20000000 g       .highcode	00000000 _highcode_vma_start
+20000090  w      .highcode	00000000 TMR2_IRQHandler
+200008d8 g     O .bss	00000004 IRQ_STA
+200008d8 g       .data	00000000 _data_vma
+20000092 g     F .highcode	0000029a SetSysClock
+20000090  w      .highcode	00000000 USB_IRQHandler
+00001074 g     F .text	00000028 UART3_SendString
+20000090  w      .highcode	00000000 I2C_IRQHandler
+0000098e g     F .text	00000080 main
+00000004 g       .highcodelalign	00000000 _highcode_lma
+20000090  w      .highcode	00000000 LLE_IRQHandler
+00000000 g       .init	00000000 _sinit
+20000090  w      .highcode	00000000 WDOG_BAT_IRQHandler
+20000090  w      .highcode	00000000 Ecall_U_Mode_Handler
+20000090  w      .highcode	00000000 TMR3_IRQHandler
+20006800 g       .stack	00000000 _eusrstack
+20000090  w      .highcode	00000000 SW_Handler
+00000f2c g     F .text	000000a6 GPIOA_ModeCfg
+00000fd2 g     F .text	00000040 GetSysClock
+200008d8 g       .data	00000000 _edata
+20000090  w      .highcode	00000000 SPI0_IRQHandler
+00000d10 g     F .text	0000000c lcd_disp_blank
+200008d8 g       .highcode	00000000 _highcode_vma_end
+000011a8 g       .dlalign	00000000 _data_lma
+00000e1e g     F .text	00000090 lcd_disp_init
+000008dc  w      .text	00000000 handle_reset
+20000090  w      .highcode	00000000 UART3_IRQHandler
+200004c4 g     F .highcode	0000000e FLASH_ROM_END
+20000090  w      .highcode	00000000 TMR1_IRQHandler
+2000032c g     F .highcode	0000007e SYS_ResetExecute
+
+
+
+Disassembly of section .init:
+
+00000000 <_sinit>:
+_start():
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:17
+
+	.section	.init,"ax",@progbits
+	.global	_start
+	.align	1
+_start:
+	j	handle_reset
+   0:	0dd0006f          	j	8dc <handle_reset>
+
+Disassembly of section .highcode:
+
+20000000 <_highcode_vma_start>:
+	...
+_vector_base():
+20000008:	0090                	addi	a2,sp,64
+2000000a:	2000                	fld	fs0,0(s0)
+2000000c:	03aa                	slli	t2,t2,0xa
+2000000e:	2000                	fld	fs0,0(s0)
+20000010:	bda9                	j	1ffffe6a <_data_lma+0x1fffecc2>
+20000012:	f5f9                	bnez	a1,1fffffe0 <_data_lma+0x1fffee38>
+20000014:	0090                	addi	a2,sp,64
+20000016:	2000                	fld	fs0,0(s0)
+	...
+20000020:	0090                	addi	a2,sp,64
+20000022:	2000                	fld	fs0,0(s0)
+20000024:	0090                	addi	a2,sp,64
+20000026:	2000                	fld	fs0,0(s0)
+	...
+20000030:	0090                	addi	a2,sp,64
+20000032:	2000                	fld	fs0,0(s0)
+20000034:	0000                	unimp
+20000036:	0000                	unimp
+20000038:	0090                	addi	a2,sp,64
+2000003a:	2000                	fld	fs0,0(s0)
+2000003c:	0000                	unimp
+2000003e:	0000                	unimp
+20000040:	0090                	addi	a2,sp,64
+20000042:	2000                	fld	fs0,0(s0)
+20000044:	0090                	addi	a2,sp,64
+20000046:	2000                	fld	fs0,0(s0)
+20000048:	0090                	addi	a2,sp,64
+2000004a:	2000                	fld	fs0,0(s0)
+2000004c:	0090                	addi	a2,sp,64
+2000004e:	2000                	fld	fs0,0(s0)
+20000050:	0090                	addi	a2,sp,64
+20000052:	2000                	fld	fs0,0(s0)
+20000054:	0090                	addi	a2,sp,64
+20000056:	2000                	fld	fs0,0(s0)
+20000058:	0090                	addi	a2,sp,64
+2000005a:	2000                	fld	fs0,0(s0)
+2000005c:	0000                	unimp
+2000005e:	0000                	unimp
+20000060:	0090                	addi	a2,sp,64
+20000062:	2000                	fld	fs0,0(s0)
+20000064:	0090                	addi	a2,sp,64
+20000066:	2000                	fld	fs0,0(s0)
+20000068:	0090                	addi	a2,sp,64
+2000006a:	2000                	fld	fs0,0(s0)
+2000006c:	0090                	addi	a2,sp,64
+2000006e:	2000                	fld	fs0,0(s0)
+20000070:	0090                	addi	a2,sp,64
+20000072:	2000                	fld	fs0,0(s0)
+20000074:	0090                	addi	a2,sp,64
+20000076:	2000                	fld	fs0,0(s0)
+20000078:	0090                	addi	a2,sp,64
+2000007a:	2000                	fld	fs0,0(s0)
+2000007c:	0090                	addi	a2,sp,64
+2000007e:	2000                	fld	fs0,0(s0)
+20000080:	0090                	addi	a2,sp,64
+20000082:	2000                	fld	fs0,0(s0)
+20000084:	0090                	addi	a2,sp,64
+20000086:	2000                	fld	fs0,0(s0)
+20000088:	0090                	addi	a2,sp,64
+2000008a:	2000                	fld	fs0,0(s0)
+2000008c:	0090                	addi	a2,sp,64
+2000008e:	2000                	fld	fs0,0(s0)
+
+20000090 <ADC_IRQHandler>:
+GPIOB_IRQHandler():
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:119
+TMR3_IRQHandler:
+UART2_IRQHandler:
+UART3_IRQHandler:
+WDOG_BAT_IRQHandler: 
+1:  
+	j 1b
+20000090:	a001                	j	20000090 <ADC_IRQHandler>
+
+20000092 <SetSysClock>:
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+ * within the valid period. The safe mode will be automatically 
+ * terminated after the above validity period is exceeded.
+ */
+ __attribute__((always_inline)) static inline void sys_safe_access_enable(void)
+{
+    if(read_csr(0x800)&0x08)
+20000092:	80002773          	csrr	a4,0x800
+20000096:	8b21                	andi	a4,a4,8
+20000098:	00001797          	auipc	a5,0x1
+2000009c:	84078793          	addi	a5,a5,-1984 # 200008d8 <_highcode_vma_end>
+200000a0:	cb19                	beqz	a4,200000b6 <SetSysClock+0x24>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+    {
+        IRQ_STA = read_csr(0x800);
+200000a2:	80002773          	csrr	a4,0x800
+200000a6:	00001697          	auipc	a3,0x1
+200000aa:	82e6a923          	sw	a4,-1998(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+200000ae:	4398                	lw	a4,0(a5)
+200000b0:	9b5d                	andi	a4,a4,-9
+200000b2:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    }
+    SAFEOPERATE;
+200000b6:	0001                	nop
+200000b8:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200000ba:	40001737          	lui	a4,0x40001
+200000be:	05700693          	li	a3,87
+200000c2:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200000c6:	fa800693          	li	a3,-88
+200000ca:	04d70023          	sb	a3,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+200000ce:	0001                	nop
+200000d0:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:29
+ */
+__HIGH_CODE
+void SetSysClock(SYS_CLKTypeDef sc)
+{
+    sys_safe_access_enable();
+    R8_PLL_CONFIG &= ~(1 << 5); //
+200000d2:	04b74683          	lbu	a3,75(a4)
+200000d6:	0df6f693          	andi	a3,a3,223
+200000da:	04d705a3          	sb	a3,75(a4)
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+}
+
+__attribute__((always_inline)) static inline void sys_safe_access_disable(void)
+{
+    R8_SAFE_ACCESS_SIG = 0;
+200000de:	04070023          	sb	zero,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200000e2:	800026f3          	csrr	a3,0x800
+200000e6:	4398                	lw	a4,0(a5)
+200000e8:	8b21                	andi	a4,a4,8
+200000ea:	8f55                	or	a4,a4,a3
+200000ec:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+200000f0:	00000717          	auipc	a4,0x0
+200000f4:	7e072423          	sw	zero,2024(a4) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+200000f8:	0001                	nop
+200000fa:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:31
+    sys_safe_access_disable();
+    if(sc & 0x20)  // HSE div
+200000fc:	02057713          	andi	a4,a0,32
+20000100:	12070b63          	beqz	a4,20000236 <SetSysClock+0x1a4>
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+20000104:	80002773          	csrr	a4,0x800
+20000108:	8b21                	andi	a4,a4,8
+2000010a:	cb19                	beqz	a4,20000120 <SetSysClock+0x8e>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+2000010c:	80002773          	csrr	a4,0x800
+20000110:	00000697          	auipc	a3,0x0
+20000114:	7ce6a423          	sw	a4,1992(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+20000118:	4398                	lw	a4,0(a5)
+2000011a:	9b5d                	andi	a4,a4,-9
+2000011c:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+20000120:	0001                	nop
+20000122:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000124:	40001737          	lui	a4,0x40001
+20000128:	05700693          	li	a3,87
+2000012c:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000130:	fa800693          	li	a3,-88
+20000134:	04d70023          	sb	a3,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+20000138:	0001                	nop
+2000013a:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:34
+    {
+        sys_safe_access_enable();
+        R32_CLK_SYS_CFG = (0 << 6) | (sc & 0x1f) | RB_TX_32M_PWR_EN | RB_PLL_PWR_EN;
+2000013c:	001406b7          	lui	a3,0x140
+20000140:	897d                	andi	a0,a0,31
+20000142:	8d55                	or	a0,a0,a3
+20000144:	c708                	sw	a0,8(a4)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:35
+        __nop();
+20000146:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:36
+        __nop();
+20000148:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:37
+        __nop();
+2000014a:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:38
+        __nop();
+2000014c:	0001                	nop
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+    R8_SAFE_ACCESS_SIG = 0;
+2000014e:	04070023          	sb	zero,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000152:	800026f3          	csrr	a3,0x800
+20000156:	4398                	lw	a4,0(a5)
+20000158:	8b21                	andi	a4,a4,8
+2000015a:	8f55                	or	a4,a4,a3
+2000015c:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+20000160:	00000717          	auipc	a4,0x0
+20000164:	76072c23          	sw	zero,1912(a4) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+20000168:	0001                	nop
+2000016a:	0001                	nop
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+2000016c:	80002773          	csrr	a4,0x800
+20000170:	8b21                	andi	a4,a4,8
+20000172:	cb19                	beqz	a4,20000188 <SetSysClock+0xf6>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+20000174:	80002773          	csrr	a4,0x800
+20000178:	00000697          	auipc	a3,0x0
+2000017c:	76e6a023          	sw	a4,1888(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+20000180:	4398                	lw	a4,0(a5)
+20000182:	9b5d                	andi	a4,a4,-9
+20000184:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+20000188:	0001                	nop
+2000018a:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+2000018c:	40001737          	lui	a4,0x40001
+20000190:	05700693          	li	a3,87
+20000194:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000198:	fa800693          	li	a3,-88
+2000019c:	04d70023          	sb	a3,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+200001a0:	0001                	nop
+200001a2:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:41
+        sys_safe_access_disable();
+        sys_safe_access_enable();
+        SAFEOPERATE;
+200001a4:	0001                	nop
+200001a6:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:42
+        R8_FLASH_CFG = 0X51;
+200001a8:	400026b7          	lui	a3,0x40002
+200001ac:	05100613          	li	a2,81
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:56
+        __nop();
+        __nop();
+        __nop();
+        sys_safe_access_disable();
+        sys_safe_access_enable();
+        R8_FLASH_CFG = 0X52;
+200001b0:	80c683a3          	sb	a2,-2041(a3) # 40001807 <_eusrstack+0x1fffb007>
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+    R8_SAFE_ACCESS_SIG = 0;
+200001b4:	04070023          	sb	zero,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200001b8:	800026f3          	csrr	a3,0x800
+200001bc:	4398                	lw	a4,0(a5)
+200001be:	8b21                	andi	a4,a4,8
+200001c0:	8f55                	or	a4,a4,a3
+200001c2:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+200001c6:	00000717          	auipc	a4,0x0
+200001ca:	70072923          	sw	zero,1810(a4) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+200001ce:	0001                	nop
+200001d0:	0001                	nop
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+200001d2:	80002773          	csrr	a4,0x800
+200001d6:	8b21                	andi	a4,a4,8
+200001d8:	cb19                	beqz	a4,200001ee <SetSysClock+0x15c>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+200001da:	80002773          	csrr	a4,0x800
+200001de:	00000697          	auipc	a3,0x0
+200001e2:	6ee6ad23          	sw	a4,1786(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+200001e6:	4398                	lw	a4,0(a5)
+200001e8:	9b5d                	andi	a4,a4,-9
+200001ea:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+200001ee:	0001                	nop
+200001f0:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200001f2:	40001737          	lui	a4,0x40001
+200001f6:	05700693          	li	a3,87
+200001fa:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200001fe:	fa800693          	li	a3,-88
+20000202:	04d70023          	sb	a3,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+20000206:	0001                	nop
+20000208:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:67
+        R32_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+        sys_safe_access_disable();
+    }
+    //更改FLASH clk的驱动能力
+    sys_safe_access_enable();
+    R8_PLL_CONFIG |= 1 << 7;
+2000020a:	04b74683          	lbu	a3,75(a4)
+2000020e:	0806e693          	ori	a3,a3,128
+20000212:	04d705a3          	sb	a3,75(a4)
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+    R8_SAFE_ACCESS_SIG = 0;
+20000216:	04070023          	sb	zero,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000021a:	80002773          	csrr	a4,0x800
+2000021e:	439c                	lw	a5,0(a5)
+20000220:	8ba1                	andi	a5,a5,8
+20000222:	8fd9                	or	a5,a5,a4
+20000224:	80079073          	csrw	0x800,a5
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+20000228:	00000797          	auipc	a5,0x0
+2000022c:	6a07a823          	sw	zero,1712(a5) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+20000230:	0001                	nop
+20000232:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:69
+    sys_safe_access_disable();
+}
+20000234:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:46
+    else if(sc & 0x40) // PLL div
+20000236:	04057713          	andi	a4,a0,64
+2000023a:	cb45                	beqz	a4,200002ea <SetSysClock+0x258>
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+2000023c:	80002773          	csrr	a4,0x800
+20000240:	8b21                	andi	a4,a4,8
+20000242:	cb19                	beqz	a4,20000258 <SetSysClock+0x1c6>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+20000244:	80002773          	csrr	a4,0x800
+20000248:	00000697          	auipc	a3,0x0
+2000024c:	68e6a823          	sw	a4,1680(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+20000250:	4398                	lw	a4,0(a5)
+20000252:	9b5d                	andi	a4,a4,-9
+20000254:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+20000258:	0001                	nop
+2000025a:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+2000025c:	40001737          	lui	a4,0x40001
+20000260:	05700693          	li	a3,87
+20000264:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000268:	fa800693          	li	a3,-88
+2000026c:	04d70023          	sb	a3,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+20000270:	0001                	nop
+20000272:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:49
+        R32_CLK_SYS_CFG = (1 << 6) | (sc & 0x1f) | RB_TX_32M_PWR_EN | RB_PLL_PWR_EN;
+20000274:	001406b7          	lui	a3,0x140
+20000278:	04068693          	addi	a3,a3,64 # 140040 <_data_lma+0x13ee98>
+2000027c:	897d                	andi	a0,a0,31
+2000027e:	8d55                	or	a0,a0,a3
+20000280:	c708                	sw	a0,8(a4)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:50
+        __nop();
+20000282:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:51
+        __nop();
+20000284:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:52
+        __nop();
+20000286:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:53
+        __nop();
+20000288:	0001                	nop
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+    R8_SAFE_ACCESS_SIG = 0;
+2000028a:	04070023          	sb	zero,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000028e:	800026f3          	csrr	a3,0x800
+20000292:	4398                	lw	a4,0(a5)
+20000294:	8b21                	andi	a4,a4,8
+20000296:	8f55                	or	a4,a4,a3
+20000298:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+2000029c:	00000717          	auipc	a4,0x0
+200002a0:	62072e23          	sw	zero,1596(a4) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+200002a4:	0001                	nop
+200002a6:	0001                	nop
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+200002a8:	80002773          	csrr	a4,0x800
+200002ac:	8b21                	andi	a4,a4,8
+200002ae:	cb19                	beqz	a4,200002c4 <SetSysClock+0x232>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+200002b0:	80002773          	csrr	a4,0x800
+200002b4:	00000697          	auipc	a3,0x0
+200002b8:	62e6a223          	sw	a4,1572(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+200002bc:	4398                	lw	a4,0(a5)
+200002be:	9b5d                	andi	a4,a4,-9
+200002c0:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+200002c4:	0001                	nop
+200002c6:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200002c8:	40001737          	lui	a4,0x40001
+200002cc:	05700693          	li	a3,87
+200002d0:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200002d4:	fa800693          	li	a3,-88
+200002d8:	04d70023          	sb	a3,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+200002dc:	0001                	nop
+200002de:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:56
+        R8_FLASH_CFG = 0X52;
+200002e0:	400026b7          	lui	a3,0x40002
+200002e4:	05200613          	li	a2,82
+200002e8:	b5e1                	j	200001b0 <SetSysClock+0x11e>
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+200002ea:	80002773          	csrr	a4,0x800
+200002ee:	8b21                	andi	a4,a4,8
+200002f0:	cb19                	beqz	a4,20000306 <SetSysClock+0x274>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+200002f2:	80002773          	csrr	a4,0x800
+200002f6:	00000697          	auipc	a3,0x0
+200002fa:	5ee6a123          	sw	a4,1506(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+200002fe:	4398                	lw	a4,0(a5)
+20000300:	9b5d                	andi	a4,a4,-9
+20000302:	80071073          	csrw	0x800,a4
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+20000306:	0001                	nop
+20000308:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+2000030a:	40001737          	lui	a4,0x40001
+2000030e:	05700693          	li	a3,87
+20000312:	04d70023          	sb	a3,64(a4) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000316:	fa800693          	li	a3,-88
+2000031a:	04d70023          	sb	a3,64(a4)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+2000031e:	0001                	nop
+20000320:	0001                	nop
+SetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:62
+        R32_CLK_SYS_CFG |= RB_CLK_SYS_MOD;
+20000322:	4714                	lw	a3,8(a4)
+20000324:	0c06e693          	ori	a3,a3,192
+20000328:	c714                	sw	a3,8(a4)
+2000032a:	b569                	j	200001b4 <SetSysClock+0x122>
+
+2000032c <SYS_ResetExecute>:
+SYS_ResetExecute():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:131
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void SYS_ResetExecute(void)
+{
+2000032c:	1141                	addi	sp,sp,-16
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:132
+    FLASH_ROM_SW_RESET();
+2000032e:	4681                	li	a3,0
+20000330:	4601                	li	a2,0
+20000332:	4581                	li	a1,0
+20000334:	4511                	li	a0,4
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:131
+{
+20000336:	c606                	sw	ra,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:132
+    FLASH_ROM_SW_RESET();
+20000338:	2c1d                	jal	2000056e <FLASH_EEPROM_CMD>
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+2000033a:	800027f3          	csrr	a5,0x800
+2000033e:	8ba1                	andi	a5,a5,8
+20000340:	00000697          	auipc	a3,0x0
+20000344:	59868693          	addi	a3,a3,1432 # 200008d8 <_highcode_vma_end>
+20000348:	cb99                	beqz	a5,2000035e <SYS_ResetExecute+0x32>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+2000034a:	800027f3          	csrr	a5,0x800
+2000034e:	00000717          	auipc	a4,0x0
+20000352:	58f72523          	sw	a5,1418(a4) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+20000356:	429c                	lw	a5,0(a3)
+20000358:	9bdd                	andi	a5,a5,-9
+2000035a:	80079073          	csrw	0x800,a5
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+2000035e:	0001                	nop
+20000360:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000362:	400017b7          	lui	a5,0x40001
+20000366:	05700713          	li	a4,87
+2000036a:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+2000036e:	fa800713          	li	a4,-88
+20000372:	04e78023          	sb	a4,64(a5)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+20000376:	0001                	nop
+20000378:	0001                	nop
+SYS_ResetExecute():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:134
+    sys_safe_access_enable();
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+2000037a:	0467c703          	lbu	a4,70(a5)
+2000037e:	00176713          	ori	a4,a4,1
+20000382:	04e78323          	sb	a4,70(a5)
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+    R8_SAFE_ACCESS_SIG = 0;
+20000386:	04078023          	sb	zero,64(a5)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+2000038a:	80002773          	csrr	a4,0x800
+2000038e:	429c                	lw	a5,0(a3)
+20000390:	8ba1                	andi	a5,a5,8
+20000392:	8fd9                	or	a5,a5,a4
+20000394:	80079073          	csrw	0x800,a5
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+20000398:	00000797          	auipc	a5,0x0
+2000039c:	5407a023          	sw	zero,1344(a5) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+200003a0:	0001                	nop
+200003a2:	0001                	nop
+SYS_ResetExecute():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:136
+    sys_safe_access_disable();
+}
+200003a4:	40b2                	lw	ra,12(sp)
+200003a6:	0141                	addi	sp,sp,16
+200003a8:	8082                	ret
+
+200003aa <HardFault_Handler>:
+HardFault_Handler():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:270
+__INTERRUPT
+__HIGH_CODE
+__attribute__((weak))
+void HardFault_Handler(void)
+{
+    FLASH_ROM_SW_RESET();
+200003aa:	4681                	li	a3,0
+200003ac:	4601                	li	a2,0
+200003ae:	4581                	li	a1,0
+200003b0:	4511                	li	a0,4
+200003b2:	2a75                	jal	2000056e <FLASH_EEPROM_CMD>
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+200003b4:	800027f3          	csrr	a5,0x800
+200003b8:	8ba1                	andi	a5,a5,8
+200003ba:	00000717          	auipc	a4,0x0
+200003be:	51e70713          	addi	a4,a4,1310 # 200008d8 <_highcode_vma_end>
+200003c2:	cb99                	beqz	a5,200003d8 <HardFault_Handler+0x2e>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+200003c4:	800027f3          	csrr	a5,0x800
+200003c8:	00000697          	auipc	a3,0x0
+200003cc:	50f6a823          	sw	a5,1296(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+200003d0:	431c                	lw	a5,0(a4)
+200003d2:	9bdd                	andi	a5,a5,-9
+200003d4:	80079073          	csrw	0x800,a5
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+200003d8:	0001                	nop
+200003da:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+200003dc:	400017b7          	lui	a5,0x40001
+200003e0:	05700693          	li	a3,87
+200003e4:	04d78023          	sb	a3,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+200003e8:	fa800693          	li	a3,-88
+200003ec:	04d78023          	sb	a3,64(a5)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+200003f0:	0001                	nop
+200003f2:	0001                	nop
+HardFault_Handler():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:272
+    sys_safe_access_enable();
+    R16_INT32K_TUNE = 0xFFFF;
+200003f4:	56fd                	li	a3,-1
+200003f6:	02d79623          	sh	a3,44(a5)
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+    R8_SAFE_ACCESS_SIG = 0;
+200003fa:	04078023          	sb	zero,64(a5)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+200003fe:	800026f3          	csrr	a3,0x800
+20000402:	431c                	lw	a5,0(a4)
+20000404:	8ba1                	andi	a5,a5,8
+20000406:	8fd5                	or	a5,a5,a3
+20000408:	80079073          	csrw	0x800,a5
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+2000040c:	00000797          	auipc	a5,0x0
+20000410:	4c07a623          	sw	zero,1228(a5) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+20000414:	0001                	nop
+20000416:	0001                	nop
+sys_safe_access_enable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:182
+    if(read_csr(0x800)&0x08)
+20000418:	800027f3          	csrr	a5,0x800
+2000041c:	8ba1                	andi	a5,a5,8
+2000041e:	cb99                	beqz	a5,20000434 <HardFault_Handler+0x8a>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:184
+        IRQ_STA = read_csr(0x800);
+20000420:	800027f3          	csrr	a5,0x800
+20000424:	00000697          	auipc	a3,0x0
+20000428:	4af6aa23          	sw	a5,1204(a3) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:185
+        write_csr(0x800, (IRQ_STA&(~0x08)));
+2000042c:	431c                	lw	a5,0(a4)
+2000042e:	9bdd                	andi	a5,a5,-9
+20000430:	80079073          	csrw	0x800,a5
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:187
+    SAFEOPERATE;
+20000434:	0001                	nop
+20000436:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:188
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG1;
+20000438:	400017b7          	lui	a5,0x40001
+2000043c:	05700693          	li	a3,87
+20000440:	04d78023          	sb	a3,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:189
+    R8_SAFE_ACCESS_SIG = SAFE_ACCESS_SIG2;
+20000444:	fa800693          	li	a3,-88
+20000448:	04d78023          	sb	a3,64(a5)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:190
+    SAFEOPERATE;
+2000044c:	0001                	nop
+2000044e:	0001                	nop
+HardFault_Handler():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:275
+    sys_safe_access_disable();
+    sys_safe_access_enable();
+    R8_RST_WDOG_CTRL |= RB_SOFTWARE_RESET;
+20000450:	0467c683          	lbu	a3,70(a5)
+20000454:	0016e693          	ori	a3,a3,1
+20000458:	04d78323          	sb	a3,70(a5)
+sys_safe_access_disable():
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:195
+    R8_SAFE_ACCESS_SIG = 0;
+2000045c:	04078023          	sb	zero,64(a5)
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:196
+    write_csr(0x800, read_csr(0x800)|(IRQ_STA&0x08));
+20000460:	800026f3          	csrr	a3,0x800
+20000464:	431c                	lw	a5,0(a4)
+20000466:	8ba1                	andi	a5,a5,8
+20000468:	8fd5                	or	a5,a5,a3
+2000046a:	80079073          	csrw	0x800,a5
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:197
+    IRQ_STA = 0;
+2000046e:	00000797          	auipc	a5,0x0
+20000472:	4607a523          	sw	zero,1130(a5) # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\StdPeriphDriver\inc/CH59x_sys.h:198
+    SAFEOPERATE;
+20000476:	0001                	nop
+20000478:	0001                	nop
+HardFault_Handler():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:277 (discriminator 1)
+    sys_safe_access_disable();
+    while(1);
+2000047a:	a001                	j	2000047a <HardFault_Handler+0xd0>
+
+2000047c <mDelayuS>:
+mDelayuS():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:296
+{
+    uint32_t i;
+#if(FREQ_SYS == 80000000)
+    i = t * 20;
+#elif(FREQ_SYS == 60000000)
+    i = t * 15;
+2000047c:	47bd                	li	a5,15
+2000047e:	02f50533          	mul	a0,a0,a5
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:320 (discriminator 1)
+#else
+    i = t << 1;
+#endif
+    do
+    {
+        __nop();
+20000482:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:321 (discriminator 1)
+    } while(--i);
+20000484:	157d                	addi	a0,a0,-1
+20000486:	fd75                	bnez	a0,20000482 <mDelayuS+0x6>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:322
+}
+20000488:	8082                	ret
+
+2000048a <mDelaymS>:
+mDelaymS():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:335
+ *
+ * @return  none
+ */
+__HIGH_CODE
+void mDelaymS(uint16_t t)
+{
+2000048a:	1141                	addi	sp,sp,-16
+2000048c:	c422                	sw	s0,8(sp)
+2000048e:	c226                	sw	s1,4(sp)
+20000490:	c606                	sw	ra,12(sp)
+20000492:	84aa                	mv	s1,a0
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:338
+    uint16_t i;
+
+    for(i = 0; i < t; i++)
+20000494:	4401                	li	s0,0
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:338 (discriminator 1)
+20000496:	00941763          	bne	s0,s1,200004a4 <mDelaymS+0x1a>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:342
+    {
+        mDelayuS(1000);
+    }
+}
+2000049a:	40b2                	lw	ra,12(sp)
+2000049c:	4422                	lw	s0,8(sp)
+2000049e:	4492                	lw	s1,4(sp)
+200004a0:	0141                	addi	sp,sp,16
+200004a2:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:338 (discriminator 3)
+    for(i = 0; i < t; i++)
+200004a4:	0405                	addi	s0,s0,1
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:340 (discriminator 3)
+        mDelayuS(1000);
+200004a6:	3e800513          	li	a0,1000
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:338 (discriminator 3)
+    for(i = 0; i < t; i++)
+200004aa:	0442                	slli	s0,s0,0x10
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:340 (discriminator 3)
+        mDelayuS(1000);
+200004ac:	3fc1                	jal	2000047c <mDelayuS>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:338 (discriminator 3)
+    for(i = 0; i < t; i++)
+200004ae:	8041                	srli	s0,s0,0x10
+200004b0:	b7dd                	j	20000496 <mDelaymS+0xc>
+
+200004b2 <FLASH_ROM_BEG>:
+FLASH_ROM_BEG():
+200004b2:	80040323          	sb	zero,-2042(s0)
+200004b6:	4715                	li	a4,5
+200004b8:	80e40323          	sb	a4,-2042(s0)
+200004bc:	0001                	nop
+200004be:	80a40223          	sb	a0,-2044(s0)
+200004c2:	8082                	ret
+
+200004c4 <FLASH_ROM_END>:
+FLASH_ROM_END():
+200004c4:	80640783          	lb	a5,-2042(s0)
+200004c8:	fe07cee3          	bltz	a5,200004c4 <FLASH_ROM_END>
+200004cc:	80040323          	sb	zero,-2042(s0)
+200004d0:	8082                	ret
+
+200004d2 <FLASH_ROM_IN>:
+FLASH_ROM_IN():
+200004d2:	80640783          	lb	a5,-2042(s0)
+200004d6:	fe07cee3          	bltz	a5,200004d2 <FLASH_ROM_IN>
+200004da:	80444503          	lbu	a0,-2044(s0)
+200004de:	8082                	ret
+
+200004e0 <FLASH_ROM_OUT>:
+FLASH_ROM_OUT():
+200004e0:	80640783          	lb	a5,-2042(s0)
+200004e4:	fe07cee3          	bltz	a5,200004e0 <FLASH_ROM_OUT>
+200004e8:	80a40223          	sb	a0,-2044(s0)
+200004ec:	8082                	ret
+
+200004ee <FLASH_ROM_ADDR>:
+FLASH_ROM_ADDR():
+200004ee:	1141                	addi	sp,sp,-16
+200004f0:	c426                	sw	s1,8(sp)
+200004f2:	c24a                	sw	s2,4(sp)
+200004f4:	c04e                	sw	s3,0(sp)
+200004f6:	c606                	sw	ra,12(sp)
+200004f8:	0bf57713          	andi	a4,a0,191
+200004fc:	47ad                	li	a5,11
+200004fe:	89aa                	mv	s3,a0
+20000500:	892e                	mv	s2,a1
+20000502:	4495                	li	s1,5
+20000504:	00f70663          	beq	a4,a5,20000510 <FLASH_ROM_ADDR+0x22>
+20000508:	4519                	li	a0,6
+2000050a:	3765                	jal	200004b2 <FLASH_ROM_BEG>
+2000050c:	3f65                	jal	200004c4 <FLASH_ROM_END>
+2000050e:	448d                	li	s1,3
+20000510:	854e                	mv	a0,s3
+20000512:	3745                	jal	200004b2 <FLASH_ROM_BEG>
+20000514:	59fd                	li	s3,-1
+20000516:	14fd                	addi	s1,s1,-1
+20000518:	01349863          	bne	s1,s3,20000528 <FLASH_ROM_ADDR+0x3a>
+2000051c:	40b2                	lw	ra,12(sp)
+2000051e:	44a2                	lw	s1,8(sp)
+20000520:	4912                	lw	s2,4(sp)
+20000522:	4982                	lw	s3,0(sp)
+20000524:	0141                	addi	sp,sp,16
+20000526:	8082                	ret
+20000528:	01095513          	srli	a0,s2,0x10
+2000052c:	0ff57513          	andi	a0,a0,255
+20000530:	3f45                	jal	200004e0 <FLASH_ROM_OUT>
+20000532:	0922                	slli	s2,s2,0x8
+20000534:	b7cd                	j	20000516 <FLASH_ROM_ADDR+0x28>
+
+20000536 <FLASH_ROM_WAIT>:
+FLASH_ROM_WAIT():
+20000536:	1101                	addi	sp,sp,-32
+20000538:	cc26                	sw	s1,24(sp)
+2000053a:	ce06                	sw	ra,28(sp)
+2000053c:	000804b7          	lui	s1,0x80
+20000540:	3751                	jal	200004c4 <FLASH_ROM_END>
+20000542:	4515                	li	a0,5
+20000544:	37bd                	jal	200004b2 <FLASH_ROM_BEG>
+20000546:	3771                	jal	200004d2 <FLASH_ROM_IN>
+20000548:	3769                	jal	200004d2 <FLASH_ROM_IN>
+2000054a:	c62a                	sw	a0,12(sp)
+2000054c:	3fa5                	jal	200004c4 <FLASH_ROM_END>
+2000054e:	4532                	lw	a0,12(sp)
+20000550:	00157793          	andi	a5,a0,1
+20000554:	eb89                	bnez	a5,20000566 <FLASH_ROM_WAIT+0x30>
+20000556:	00156513          	ori	a0,a0,1
+2000055a:	0ff57513          	andi	a0,a0,255
+2000055e:	40f2                	lw	ra,28(sp)
+20000560:	44e2                	lw	s1,24(sp)
+20000562:	6105                	addi	sp,sp,32
+20000564:	8082                	ret
+20000566:	14fd                	addi	s1,s1,-1
+20000568:	fce9                	bnez	s1,20000542 <FLASH_ROM_WAIT+0xc>
+2000056a:	4501                	li	a0,0
+2000056c:	bfcd                	j	2000055e <FLASH_ROM_WAIT+0x28>
+
+2000056e <FLASH_EEPROM_CMD>:
+FLASH_EEPROM_CMD():
+2000056e:	7139                	addi	sp,sp,-64
+20000570:	dc26                	sw	s1,56(sp)
+20000572:	da4a                	sw	s2,52(sp)
+20000574:	d84e                	sw	s3,48(sp)
+20000576:	d652                	sw	s4,44(sp)
+20000578:	d456                	sw	s5,40(sp)
+2000057a:	d25a                	sw	s6,36(sp)
+2000057c:	d05e                	sw	s7,32(sp)
+2000057e:	de06                	sw	ra,60(sp)
+20000580:	ce62                	sw	s8,28(sp)
+20000582:	cc66                	sw	s9,24(sp)
+20000584:	e000e7b7          	lui	a5,0xe000e
+20000588:	577d                	li	a4,-1
+2000058a:	0007aa83          	lw	s5,0(a5) # e000e000 <_eusrstack+0xc0007800>
+2000058e:	c622                	sw	s0,12(sp)
+20000590:	0047aa03          	lw	s4,4(a5)
+20000594:	18e7a023          	sw	a4,384(a5)
+20000598:	18e7a223          	sw	a4,388(a5)
+2000059c:	400017b7          	lui	a5,0x40001
+200005a0:	05700713          	li	a4,87
+200005a4:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+200005a8:	fa800713          	li	a4,-88
+200005ac:	04e78023          	sb	a4,64(a5)
+200005b0:	0447c783          	lbu	a5,68(a5)
+200005b4:	ff750b93          	addi	s7,a0,-9
+200005b8:	84b6                	mv	s1,a3
+200005ba:	07e2                	slli	a5,a5,0x18
+200005bc:	0ffbfb93          	andi	s7,s7,255
+200005c0:	4685                	li	a3,1
+200005c2:	89aa                	mv	s3,a0
+200005c4:	8b2e                	mv	s6,a1
+200005c6:	8932                	mv	s2,a2
+200005c8:	40002437          	lui	s0,0x40002
+200005cc:	87e1                	srai	a5,a5,0x18
+200005ce:	5701                	li	a4,-32
+200005d0:	0176fa63          	bgeu	a3,s7,200005e4 <FLASH_EEPROM_CMD+0x76>
+200005d4:	00d50863          	beq	a0,a3,200005e4 <FLASH_EEPROM_CMD+0x76>
+200005d8:	4689                	li	a3,2
+200005da:	02000713          	li	a4,32
+200005de:	00d51363          	bne	a0,a3,200005e4 <FLASH_EEPROM_CMD+0x76>
+200005e2:	5701                	li	a4,-32
+200005e4:	8fd9                	or	a5,a5,a4
+200005e6:	0ff7f793          	andi	a5,a5,255
+200005ea:	40001cb7          	lui	s9,0x40001
+200005ee:	04fc8223          	sb	a5,68(s9) # 40001044 <_eusrstack+0x1fffa844>
+200005f2:	4711                	li	a4,4
+200005f4:	80e40323          	sb	a4,-2042(s0) # 40001806 <_eusrstack+0x1fffb006>
+200005f8:	0ff00513          	li	a0,255
+200005fc:	3d5d                	jal	200004b2 <FLASH_ROM_BEG>
+200005fe:	4c09                	li	s8,2
+20000600:	35d1                	jal	200004c4 <FLASH_ROM_END>
+20000602:	117c6d63          	bltu	s8,s7,2000071c <FLASH_EEPROM_CMD+0x1ae>
+20000606:	000705b7          	lui	a1,0x70
+2000060a:	95da                	add	a1,a1,s6
+2000060c:	00078737          	lui	a4,0x78
+20000610:	5579                	li	a0,-2
+20000612:	04e5f263          	bgeu	a1,a4,20000656 <FLASH_EEPROM_CMD+0xe8>
+20000616:	009587b3          	add	a5,a1,s1
+2000061a:	02f76e63          	bltu	a4,a5,20000656 <FLASH_EEPROM_CMD+0xe8>
+2000061e:	00080b37          	lui	s6,0x80
+20000622:	47a9                	li	a5,10
+20000624:	0165eb33          	or	s6,a1,s6
+20000628:	06f99963          	bne	s3,a5,2000069a <FLASH_EEPROM_CMD+0x12c>
+2000062c:	e489                	bnez	s1,20000636 <FLASH_EEPROM_CMD+0xc8>
+2000062e:	4481                	li	s1,0
+20000630:	3d51                	jal	200004c4 <FLASH_ROM_END>
+20000632:	8526                	mv	a0,s1
+20000634:	a00d                	j	20000656 <FLASH_EEPROM_CMD+0xe8>
+20000636:	85da                	mv	a1,s6
+20000638:	4509                	li	a0,2
+2000063a:	3d55                	jal	200004ee <FLASH_ROM_ADDR>
+2000063c:	0905                	addi	s2,s2,1
+2000063e:	fff94503          	lbu	a0,-1(s2)
+20000642:	14fd                	addi	s1,s1,-1
+20000644:	0b05                	addi	s6,s6,1
+20000646:	3d69                	jal	200004e0 <FLASH_ROM_OUT>
+20000648:	c481                	beqz	s1,20000650 <FLASH_EEPROM_CMD+0xe2>
+2000064a:	0ffb7793          	andi	a5,s6,255
+2000064e:	f7fd                	bnez	a5,2000063c <FLASH_EEPROM_CMD+0xce>
+20000650:	35dd                	jal	20000536 <FLASH_ROM_WAIT>
+20000652:	fd69                	bnez	a0,2000062c <FLASH_EEPROM_CMD+0xbe>
+20000654:	557d                	li	a0,-1
+20000656:	400017b7          	lui	a5,0x40001
+2000065a:	05700713          	li	a4,87
+2000065e:	04e78023          	sb	a4,64(a5) # 40001040 <_eusrstack+0x1fffa840>
+20000662:	fa800713          	li	a4,-88
+20000666:	04e78023          	sb	a4,64(a5)
+2000066a:	0447c703          	lbu	a4,68(a5)
+2000066e:	8b41                	andi	a4,a4,16
+20000670:	04e78223          	sb	a4,68(a5)
+20000674:	50f2                	lw	ra,60(sp)
+20000676:	e000e7b7          	lui	a5,0xe000e
+2000067a:	1157a023          	sw	s5,256(a5) # e000e100 <_eusrstack+0xc0007900>
+2000067e:	1147a223          	sw	s4,260(a5)
+20000682:	54e2                	lw	s1,56(sp)
+20000684:	4432                	lw	s0,12(sp)
+20000686:	5952                	lw	s2,52(sp)
+20000688:	59c2                	lw	s3,48(sp)
+2000068a:	5a32                	lw	s4,44(sp)
+2000068c:	5aa2                	lw	s5,40(sp)
+2000068e:	5b12                	lw	s6,36(sp)
+20000690:	5b82                	lw	s7,32(sp)
+20000692:	4c72                	lw	s8,28(sp)
+20000694:	4ce2                	lw	s9,24(sp)
+20000696:	6121                	addi	sp,sp,64
+20000698:	8082                	ret
+2000069a:	47a5                	li	a5,9
+2000069c:	06f99563          	bne	s3,a5,20000706 <FLASH_EEPROM_CMD+0x198>
+200006a0:	6985                	lui	s3,0x1
+200006a2:	0ff00913          	li	s2,255
+200006a6:	009906b3          	add	a3,s2,s1
+200006aa:	012b74b3          	and	s1,s6,s2
+200006ae:	94b6                	add	s1,s1,a3
+200006b0:	fff94913          	not	s2,s2
+200006b4:	009974b3          	and	s1,s2,s1
+200006b8:	6b85                	lui	s7,0x1
+200006ba:	01697933          	and	s2,s2,s6
+200006be:	6b41                	lui	s6,0x10
+200006c0:	fff98793          	addi	a5,s3,-1 # fff <GetSysClock+0x2d>
+200006c4:	0127f7b3          	and	a5,a5,s2
+200006c8:	e399                	bnez	a5,200006ce <FLASH_EEPROM_CMD+0x160>
+200006ca:	0134fc63          	bgeu	s1,s3,200006e2 <FLASH_EEPROM_CMD+0x174>
+200006ce:	0049d993          	srli	s3,s3,0x4
+200006d2:	47c1                	li	a5,16
+200006d4:	ff37e6e3          	bltu	a5,s3,200006c0 <FLASH_EEPROM_CMD+0x152>
+200006d8:	bf99                	j	2000062e <FLASH_EEPROM_CMD+0xc0>
+200006da:	6905                	lui	s2,0x1
+200006dc:	69c1                	lui	s3,0x10
+200006de:	197d                	addi	s2,s2,-1
+200006e0:	b7d9                	j	200006a6 <FLASH_EEPROM_CMD+0x138>
+200006e2:	0d800513          	li	a0,216
+200006e6:	01698863          	beq	s3,s6,200006f6 <FLASH_EEPROM_CMD+0x188>
+200006ea:	02000513          	li	a0,32
+200006ee:	01798463          	beq	s3,s7,200006f6 <FLASH_EEPROM_CMD+0x188>
+200006f2:	08100513          	li	a0,129
+200006f6:	85ca                	mv	a1,s2
+200006f8:	3bdd                	jal	200004ee <FLASH_ROM_ADDR>
+200006fa:	3d35                	jal	20000536 <FLASH_ROM_WAIT>
+200006fc:	dd21                	beqz	a0,20000654 <FLASH_EEPROM_CMD+0xe6>
+200006fe:	994e                	add	s2,s2,s3
+20000700:	413484b3          	sub	s1,s1,s3
+20000704:	b7d9                	j	200006ca <FLASH_EEPROM_CMD+0x15c>
+20000706:	85da                	mv	a1,s6
+20000708:	452d                	li	a0,11
+2000070a:	33d5                	jal	200004ee <FLASH_ROM_ADDR>
+2000070c:	94ca                	add	s1,s1,s2
+2000070e:	f29900e3          	beq	s2,s1,2000062e <FLASH_EEPROM_CMD+0xc0>
+20000712:	0905                	addi	s2,s2,1
+20000714:	3b7d                	jal	200004d2 <FLASH_ROM_IN>
+20000716:	fea90fa3          	sb	a0,-1(s2) # fff <GetSysClock+0x2d>
+2000071a:	bfd5                	j	2000070e <FLASH_EEPROM_CMD+0x1a0>
+2000071c:	fff98793          	addi	a5,s3,-1 # ffff <_data_lma+0xee57>
+20000720:	0ff7f793          	andi	a5,a5,255
+20000724:	0cfc6163          	bltu	s8,a5,200007e6 <.loop402+0x7a>
+20000728:	041cc783          	lbu	a5,65(s9)
+2000072c:	08300713          	li	a4,131
+20000730:	04f71f63          	bne	a4,a5,2000078e <.loop402+0x22>
+20000734:	00080737          	lui	a4,0x80
+20000738:	04eb6b63          	bltu	s6,a4,2000078e <.loop402+0x22>
+2000073c:	009b07b3          	add	a5,s6,s1
+20000740:	001006b7          	lui	a3,0x100
+20000744:	04d7f563          	bgeu	a5,a3,2000078e <.loop402+0x22>
+20000748:	00eb4b33          	xor	s6,s6,a4
+2000074c:	4789                	li	a5,2
+2000074e:	06f99363          	bne	s3,a5,200007b4 <.loop402+0x48>
+20000752:	8089                	srli	s1,s1,0x2
+20000754:	49d5                	li	s3,21
+20000756:	ec048ce3          	beqz	s1,2000062e <FLASH_EEPROM_CMD+0xc0>
+2000075a:	85da                	mv	a1,s6
+2000075c:	4509                	li	a0,2
+2000075e:	3b41                	jal	200004ee <FLASH_ROM_ADDR>
+20000760:	0911                	addi	s2,s2,4
+20000762:	ffc92703          	lw	a4,-4(s2)
+20000766:	4791                	li	a5,4
+20000768:	80e42023          	sw	a4,-2048(s0)
+
+2000076c <.loop402>:
+2000076c:	80640703          	lb	a4,-2042(s0)
+20000770:	fe074ee3          	bltz	a4,2000076c <.loop402>
+20000774:	81340323          	sb	s3,-2042(s0)
+20000778:	17fd                	addi	a5,a5,-1
+2000077a:	fbed                	bnez	a5,2000076c <.loop402>
+2000077c:	14fd                	addi	s1,s1,-1
+2000077e:	0b11                	addi	s6,s6,4
+20000780:	c481                	beqz	s1,20000788 <.loop402+0x1c>
+20000782:	0ffb7793          	andi	a5,s6,255
+20000786:	ffe9                	bnez	a5,20000760 <FLASH_EEPROM_CMD+0x1f2>
+20000788:	337d                	jal	20000536 <FLASH_ROM_WAIT>
+2000078a:	f571                	bnez	a0,20000756 <FLASH_EEPROM_CMD+0x1e8>
+2000078c:	b5e1                	j	20000654 <FLASH_EEPROM_CMD+0xe6>
+2000078e:	400017b7          	lui	a5,0x40001
+20000792:	0457c703          	lbu	a4,69(a5) # 40001045 <_eusrstack+0x1fffa845>
+20000796:	000807b7          	lui	a5,0x80
+2000079a:	02077713          	andi	a4,a4,32
+2000079e:	e319                	bnez	a4,200007a4 <.loop402+0x38>
+200007a0:	000787b7          	lui	a5,0x78
+200007a4:	5579                	li	a0,-2
+200007a6:	eafb78e3          	bgeu	s6,a5,20000656 <FLASH_EEPROM_CMD+0xe8>
+200007aa:	009b0733          	add	a4,s6,s1
+200007ae:	f8e7ffe3          	bgeu	a5,a4,2000074c <FLASH_EEPROM_CMD+0x1de>
+200007b2:	b555                	j	20000656 <FLASH_EEPROM_CMD+0xe8>
+200007b4:	4785                	li	a5,1
+200007b6:	f2f982e3          	beq	s3,a5,200006da <FLASH_EEPROM_CMD+0x16c>
+200007ba:	85da                	mv	a1,s6
+200007bc:	452d                	li	a0,11
+200007be:	3b05                	jal	200004ee <FLASH_ROM_ADDR>
+200007c0:	fff48993          	addi	s3,s1,-1 # 7ffff <_data_lma+0x7ee57>
+200007c4:	e60485e3          	beqz	s1,2000062e <FLASH_EEPROM_CMD+0xc0>
+200007c8:	3329                	jal	200004d2 <FLASH_ROM_IN>
+200007ca:	0039f793          	andi	a5,s3,3
+200007ce:	eb91                	bnez	a5,200007e2 <.loop402+0x76>
+200007d0:	80042683          	lw	a3,-2048(s0)
+200007d4:	00092703          	lw	a4,0(s2)
+200007d8:	00490793          	addi	a5,s2,4
+200007dc:	e4e69ae3          	bne	a3,a4,20000630 <FLASH_EEPROM_CMD+0xc2>
+200007e0:	893e                	mv	s2,a5
+200007e2:	84ce                	mv	s1,s3
+200007e4:	bff1                	j	200007c0 <.loop402+0x54>
+200007e6:	47b5                	li	a5,13
+200007e8:	00f99663          	bne	s3,a5,200007f4 <.loop402+0x88>
+200007ec:	0b900513          	li	a0,185
+200007f0:	31c9                	jal	200004b2 <FLASH_ROM_BEG>
+200007f2:	bd35                	j	2000062e <FLASH_EEPROM_CMD+0xc0>
+200007f4:	47b1                	li	a5,12
+200007f6:	0ab00513          	li	a0,171
+200007fa:	fef98be3          	beq	s3,a5,200007f0 <.loop402+0x84>
+200007fe:	4799                	li	a5,6
+20000800:	04f99163          	bne	s3,a5,20000842 <.loop402+0xd6>
+20000804:	000805b7          	lui	a1,0x80
+20000808:	00bb65b3          	or	a1,s6,a1
+2000080c:	452d                	li	a0,11
+2000080e:	31c5                	jal	200004ee <FLASH_ROM_ADDR>
+20000810:	4481                	li	s1,0
+20000812:	4b8d                	li	s7,3
+20000814:	49a1                	li	s3,8
+20000816:	3975                	jal	200004d2 <FLASH_ROM_IN>
+20000818:	01749663          	bne	s1,s7,20000824 <.loop402+0xb8>
+2000081c:	80042783          	lw	a5,-2048(s0)
+20000820:	00f92023          	sw	a5,0(s2)
+20000824:	0485                	addi	s1,s1,1
+20000826:	ff3498e3          	bne	s1,s3,20000816 <.loop402+0xaa>
+2000082a:	80042783          	lw	a5,-2048(s0)
+2000082e:	012b1713          	slli	a4,s6,0x12
+20000832:	00075563          	bgez	a4,2000083c <.loop402+0xd0>
+20000836:	00f91223          	sh	a5,4(s2)
+2000083a:	bbd5                	j	2000062e <FLASH_EEPROM_CMD+0xc0>
+2000083c:	00f92223          	sw	a5,4(s2)
+20000840:	b3fd                	j	2000062e <FLASH_EEPROM_CMD+0xc0>
+20000842:	479d                	li	a5,7
+20000844:	02f99963          	bne	s3,a5,20000876 <.loop402+0x10a>
+20000848:	4581                	li	a1,0
+2000084a:	04b00513          	li	a0,75
+2000084e:	3145                	jal	200004ee <FLASH_ROM_ADDR>
+20000850:	44bd                	li	s1,15
+20000852:	00092023          	sw	zero,0(s2)
+20000856:	00092223          	sw	zero,4(s2)
+2000085a:	59fd                	li	s3,-1
+2000085c:	399d                	jal	200004d2 <FLASH_ROM_IN>
+2000085e:	0074f793          	andi	a5,s1,7
+20000862:	97ca                	add	a5,a5,s2
+20000864:	0007c703          	lbu	a4,0(a5) # 78000 <_data_lma+0x76e58>
+20000868:	14fd                	addi	s1,s1,-1
+2000086a:	8d39                	xor	a0,a0,a4
+2000086c:	00a78023          	sb	a0,0(a5)
+20000870:	ff3496e3          	bne	s1,s3,2000085c <.loop402+0xf0>
+20000874:	bb6d                	j	2000062e <FLASH_EEPROM_CMD+0xc0>
+20000876:	47a1                	li	a5,8
+20000878:	04f99263          	bne	s3,a5,200008bc <.loop402+0x150>
+2000087c:	396d                	jal	20000536 <FLASH_ROM_WAIT>
+2000087e:	4481                	li	s1,0
+20000880:	000b0d63          	beqz	s6,2000089a <.loop402+0x12e>
+20000884:	478d                	li	a5,3
+20000886:	03c00493          	li	s1,60
+2000088a:	00fb0863          	beq	s6,a5,2000089a <.loop402+0x12e>
+2000088e:	05000493          	li	s1,80
+20000892:	018b0463          	beq	s6,s8,2000089a <.loop402+0x12e>
+20000896:	04400493          	li	s1,68
+2000089a:	07c57513          	andi	a0,a0,124
+2000089e:	d89508e3          	beq	a0,s1,2000062e <FLASH_EEPROM_CMD+0xc0>
+200008a2:	4519                	li	a0,6
+200008a4:	3139                	jal	200004b2 <FLASH_ROM_BEG>
+200008a6:	3939                	jal	200004c4 <FLASH_ROM_END>
+200008a8:	4505                	li	a0,1
+200008aa:	3121                	jal	200004b2 <FLASH_ROM_BEG>
+200008ac:	8526                	mv	a0,s1
+200008ae:	390d                	jal	200004e0 <FLASH_ROM_OUT>
+200008b0:	4509                	li	a0,2
+200008b2:	313d                	jal	200004e0 <FLASH_ROM_OUT>
+200008b4:	3149                	jal	20000536 <FLASH_ROM_WAIT>
+200008b6:	d6051ce3          	bnez	a0,2000062e <FLASH_EEPROM_CMD+0xc0>
+200008ba:	bb69                	j	20000654 <FLASH_EEPROM_CMD+0xe6>
+200008bc:	4791                	li	a5,4
+200008be:	00f99963          	bne	s3,a5,200008d0 <.loop402+0x164>
+200008c2:	06600513          	li	a0,102
+200008c6:	36f5                	jal	200004b2 <FLASH_ROM_BEG>
+200008c8:	3ef5                	jal	200004c4 <FLASH_ROM_END>
+200008ca:	09900513          	li	a0,153
+200008ce:	b70d                	j	200007f0 <.loop402+0x84>
+200008d0:	d4098fe3          	beqz	s3,2000062e <FLASH_EEPROM_CMD+0xc0>
+200008d4:	54f1                	li	s1,-4
+200008d6:	bba9                	j	20000630 <FLASH_EEPROM_CMD+0xc2>
+
+Disassembly of section .text:
+
+000008dc <handle_reset>:
+handle_reset():
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:127
+	.weak	handle_reset
+	.align	1
+handle_reset:
+.option push 
+.option	norelax 
+	la gp, __global_pointer$
+     8dc:	20000197          	auipc	gp,0x20000
+     8e0:	7fc18193          	addi	gp,gp,2044 # 200010d8 <__global_pointer$>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:130
+.option	pop 
+1:
+	la sp, _eusrstack 
+     8e4:	20006117          	auipc	sp,0x20006
+     8e8:	f1c10113          	addi	sp,sp,-228 # 20006800 <_eusrstack>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:134
+
+/* Load highcode code  section from flash to RAM */
+2:
+    la a0, _highcode_lma
+     8ec:	00400513          	li	a0,4
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:135
+    la a1, _highcode_vma_start
+     8f0:	1ffff597          	auipc	a1,0x1ffff
+     8f4:	71058593          	addi	a1,a1,1808 # 20000000 <_highcode_vma_start>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:136
+    la a2, _highcode_vma_end
+     8f8:	20000617          	auipc	a2,0x20000
+     8fc:	fe060613          	addi	a2,a2,-32 # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:137
+    bgeu a1, a2, 2f
+     900:	00c5fa63          	bgeu	a1,a2,914 <handle_reset+0x38>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:139
+1:
+    lw t0, (a0)
+     904:	00052283          	lw	t0,0(a0)
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:140
+    sw t0, (a1)
+     908:	0055a023          	sw	t0,0(a1)
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:141
+    addi a0, a0, 4
+     90c:	0511                	addi	a0,a0,4
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:142
+    addi a1, a1, 4
+     90e:	0591                	addi	a1,a1,4
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:143
+    bltu a1, a2, 1b
+     910:	fec5eae3          	bltu	a1,a2,904 <handle_reset+0x28>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:147
+
+/* Load data section from flash to RAM */
+2:
+	la a0, _data_lma
+     914:	00001517          	auipc	a0,0x1
+     918:	89450513          	addi	a0,a0,-1900 # 11a8 <_data_lma>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:148
+	la a1, _data_vma
+     91c:	20000597          	auipc	a1,0x20000
+     920:	fbc58593          	addi	a1,a1,-68 # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:149
+	la a2, _edata
+     924:	20000617          	auipc	a2,0x20000
+     928:	fb460613          	addi	a2,a2,-76 # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:150
+	bgeu a1, a2, 2f
+     92c:	00c5fa63          	bgeu	a1,a2,940 <handle_reset+0x64>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:152
+1:
+	lw t0, (a0)
+     930:	00052283          	lw	t0,0(a0)
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:153
+	sw t0, (a1)
+     934:	0055a023          	sw	t0,0(a1)
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:154
+	addi a0, a0, 4
+     938:	0511                	addi	a0,a0,4
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:155
+	addi a1, a1, 4
+     93a:	0591                	addi	a1,a1,4
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:156
+	bltu a1, a2, 1b
+     93c:	fec5eae3          	bltu	a1,a2,930 <handle_reset+0x54>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:159
+2:
+	/* clear bss section */
+	la a0, _sbss
+     940:	20000517          	auipc	a0,0x20000
+     944:	f9850513          	addi	a0,a0,-104 # 200008d8 <_highcode_vma_end>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:160
+	la a1, _ebss
+     948:	81418593          	addi	a1,gp,-2028 # 200008ec <_ebss>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:161
+	bgeu a0, a1, 2f
+     94c:	00b57763          	bgeu	a0,a1,95a <handle_reset+0x7e>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:163
+1:
+	sw zero, (a0)
+     950:	00052023          	sw	zero,0(a0)
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:164
+	addi a0, a0, 4
+     954:	0511                	addi	a0,a0,4
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:165
+	bltu a0, a1, 1b
+     956:	feb56de3          	bltu	a0,a1,950 <handle_reset+0x74>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:168
+2:
+	/* 流水线控制位 & 动态预测控制位 */
+	li t0, 0x1f
+     95a:	42fd                	li	t0,31
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:169
+	csrw 0xbc0, t0
+     95c:	bc029073          	csrw	0xbc0,t0
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:171
+	/* 打开嵌套中断、硬件压栈功能 */
+	li t0, 0x3
+     960:	428d                	li	t0,3
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:172
+	csrw 0x804, t0
+     962:	80429073          	csrw	0x804,t0
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:174
+	
+    li t0, 0x88
+     966:	08800293          	li	t0,136
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:175
+    csrs mstatus, t0
+     96a:	3002a073          	csrs	mstatus,t0
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:176
+	la t0, _vector_base
+     96e:	1ffff297          	auipc	t0,0x1ffff
+     972:	69228293          	addi	t0,t0,1682 # 20000000 <_highcode_vma_start>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:179
+
+	/* 配置向量表模式为绝对地址模式 */
+    ori t0, t0, 3
+     976:	0032e293          	ori	t0,t0,3
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:180
+	csrw mtvec, t0
+     97a:	30529073          	csrw	mtvec,t0
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:182
+
+	la t0, main
+     97e:	00000297          	auipc	t0,0x0
+     982:	01028293          	addi	t0,t0,16 # 98e <main>
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:183
+	csrw mepc, t0
+     986:	34129073          	csrw	mepc,t0
+C:\MRS_DATA\workspace\ADCt\obj/../Startup/startup_CH592.S:185
+	
+	mret
+     98a:	30200073          	mret
+
+0000098e <main>:
+main():
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:28
+ * @brief   主函数
+ *
+ * @return  none
+ */
+int main()
+{
+     98e:	1101                	addi	sp,sp,-32
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:33
+
+    uint8_t      i;
+    signed short RoughCalib_Value = 0; // ADC粗调偏差值
+
+    SetSysClock(CLK_SOURCE_PLL_60MHz);
+     990:	04800513          	li	a0,72
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:28
+{
+     994:	ce06                	sw	ra,28(sp)
+     996:	ca26                	sw	s1,20(sp)
+     998:	cc22                	sw	s0,24(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:33
+    SetSysClock(CLK_SOURCE_PLL_60MHz);
+     99a:	1ffff097          	auipc	ra,0x1ffff
+     99e:	6f8080e7          	jalr	1784(ra) # 20000092 <SetSysClock>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:36
+
+    /* 配置串口调试 */
+    GPIOA_SetBits(GPIO_Pin_5);
+     9a2:	40001737          	lui	a4,0x40001
+     9a6:	0a872783          	lw	a5,168(a4) # 400010a8 <_eusrstack+0x1fffa8a8>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:37
+        GPIOA_ModeCfg(GPIO_Pin_4,GPIO_ModeIN_PD);
+     9aa:	4589                	li	a1,2
+     9ac:	4541                	li	a0,16
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:36
+    GPIOA_SetBits(GPIO_Pin_5);
+     9ae:	0207e793          	ori	a5,a5,32
+     9b2:	0af72423          	sw	a5,168(a4)
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:37
+        GPIOA_ModeCfg(GPIO_Pin_4,GPIO_ModeIN_PD);
+     9b6:	2b9d                	jal	f2c <GPIOA_ModeCfg>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:38
+        GPIOA_ModeCfg(GPIO_Pin_5, GPIO_ModeOut_PP_5mA);
+     9b8:	458d                	li	a1,3
+     9ba:	02000513          	li	a0,32
+     9be:	23bd                	jal	f2c <GPIOA_ModeCfg>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:48
+
+
+    while(1){
+        int adv_value=ADC_ExcutSingleConver();
+        uint8_t temp = adc_to_temperature_celsius(adv_value);
+        char tempc[2] ={(temp/10)+48,(temp%10)+48};
+     9c0:	44a9                	li	s1,10
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:39
+        UART3_DefInit();
+     9c2:	2541                	jal	1042 <UART3_DefInit>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:40
+    lcd_disp_init();
+     9c4:	29a9                	jal	e1e <lcd_disp_init>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:41
+    lcd_disp_blank();
+     9c6:	26a9                	jal	d10 <lcd_disp_blank>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:42
+    ADC_InterTSSampInit();
+     9c8:	21dd                	jal	eae <ADC_InterTSSampInit>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:46 (discriminator 1)
+        int adv_value=ADC_ExcutSingleConver();
+     9ca:	2b21                	jal	ee2 <ADC_ExcutSingleConver>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:47 (discriminator 1)
+        uint8_t temp = adc_to_temperature_celsius(adv_value);
+     9cc:	2b25                	jal	f04 <adc_to_temperature_celsius>
+     9ce:	0ff57793          	andi	a5,a0,255
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:48 (discriminator 1)
+        char tempc[2] ={(temp/10)+48,(temp%10)+48};
+     9d2:	0297d733          	divu	a4,a5,s1
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:47 (discriminator 1)
+        uint8_t temp = adc_to_temperature_celsius(adv_value);
+     9d6:	842a                	mv	s0,a0
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:49 (discriminator 1)
+        UART3_SendString(tempc,2);
+     9d8:	4589                	li	a1,2
+     9da:	0068                	addi	a0,sp,12
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:48 (discriminator 1)
+        char tempc[2] ={(temp/10)+48,(temp%10)+48};
+     9dc:	0297f7b3          	remu	a5,a5,s1
+     9e0:	03070713          	addi	a4,a4,48
+     9e4:	00e10623          	sb	a4,12(sp)
+     9e8:	03078793          	addi	a5,a5,48
+     9ec:	00f106a3          	sb	a5,13(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:49 (discriminator 1)
+        UART3_SendString(tempc,2);
+     9f0:	2551                	jal	1074 <UART3_SendString>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:50 (discriminator 1)
+        lcd_disp_num(temp,0,LCD_F_REM |LCD_F_KW|LCD_F_DOT|LCD_F_H,10);
+     9f2:	0ff47513          	andi	a0,s0,255
+     9f6:	46a9                	li	a3,10
+     9f8:	18500613          	li	a2,389
+     9fc:	4581                	li	a1,0
+     9fe:	2e39                	jal	d1c <lcd_disp_num>
+C:\MRS_DATA\workspace\ADCt\obj/../User/Main.c:51 (discriminator 1)
+        DelayMs(1000);
+     a00:	3e800513          	li	a0,1000
+     a04:	20000097          	auipc	ra,0x20000
+     a08:	a86080e7          	jalr	-1402(ra) # 2000048a <mDelaymS>
+     a0c:	bf7d                	j	9ca <main+0x3c>
+
+00000a0e <Write_Data_H>:
+Write_Data_H():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:496
+/********************从高位写入数据*************************/
+static void Write_Data_H( uchar Data, uchar Cnt )     //Data的高cnt位写入TM1621C，高位在前
+{
+    uchar i;
+
+    for( i = 0; i < Cnt; i++ )
+     a0e:	4701                	li	a4,0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:498
+    {
+        GPIOA_ResetBits( WRITE );
+     a10:	400017b7          	lui	a5,0x40001
+     a14:	6689                	lui	a3,0x2
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:502
+        if( Data & 0x80 )                               //从最高位发送
+            GPIOA_SetBits( DATA );
+        else
+            GPIOA_ResetBits( DATA );
+     a16:	6811                	lui	a6,0x4
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:498
+        GPIOA_ResetBits( WRITE );
+     a18:	0ac7a603          	lw	a2,172(a5) # 400010ac <_eusrstack+0x1fffa8ac>
+     a1c:	8e55                	or	a2,a2,a3
+     a1e:	0ac7a623          	sw	a2,172(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:499
+        if( Data & 0x80 )                               //从最高位发送
+     a22:	01851613          	slli	a2,a0,0x18
+     a26:	8661                	srai	a2,a2,0x18
+     a28:	04065363          	bgez	a2,a6e <Write_Data_H+0x60>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:500
+            GPIOA_SetBits( DATA );
+     a2c:	0a87a603          	lw	a2,168(a5)
+     a30:	01066633          	or	a2,a2,a6
+     a34:	0ac7a423          	sw	a2,168(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:503 (discriminator 2)
+        __asm__("nop");
+     a38:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:504 (discriminator 2)
+        __asm__("nop");
+     a3a:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:505 (discriminator 2)
+        GPIOA_SetBits( WRITE );
+     a3c:	0a87a603          	lw	a2,168(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:496 (discriminator 2)
+    for( i = 0; i < Cnt; i++ )
+     a40:	0705                	addi	a4,a4,1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:506 (discriminator 2)
+        Data <<= 1;
+     a42:	0506                	slli	a0,a0,0x1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:505 (discriminator 2)
+        GPIOA_SetBits( WRITE );
+     a44:	8e55                	or	a2,a2,a3
+     a46:	0ac7a423          	sw	a2,168(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:496 (discriminator 2)
+    for( i = 0; i < Cnt; i++ )
+     a4a:	0ff77713          	andi	a4,a4,255
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:506 (discriminator 2)
+        Data <<= 1;
+     a4e:	0ff57513          	andi	a0,a0,255
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:496 (discriminator 2)
+    for( i = 0; i < Cnt; i++ )
+     a52:	fce593e3          	bne	a1,a4,a18 <Write_Data_H+0xa>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:508
+    }
+    GPIOA_ResetBits( WRITE );
+     a56:	0ac7a703          	lw	a4,172(a5)
+     a5a:	8f55                	or	a4,a4,a3
+     a5c:	0ae7a623          	sw	a4,172(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:509
+    GPIOA_ResetBits( DATA );
+     a60:	0ac7a703          	lw	a4,172(a5)
+     a64:	6691                	lui	a3,0x4
+     a66:	8f55                	or	a4,a4,a3
+     a68:	0ae7a623          	sw	a4,172(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:510
+}
+     a6c:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:502
+            GPIOA_ResetBits( DATA );
+     a6e:	0ac7a603          	lw	a2,172(a5)
+     a72:	01066633          	or	a2,a2,a6
+     a76:	0ac7a623          	sw	a2,172(a5)
+     a7a:	bf7d                	j	a38 <Write_Data_H+0x2a>
+
+00000a7c <WriteCmd>:
+WriteCmd():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:535
+    GPIOA_ResetBits( DATA );
+}
+
+/********************写入控制命令*************************/
+static void WriteCmd( uchar Cmd )
+{
+     a7c:	1141                	addi	sp,sp,-16
+     a7e:	c422                	sw	s0,8(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:536
+    GPIOA_ResetBits( CS );
+     a80:	40001437          	lui	s0,0x40001
+     a84:	0ac42703          	lw	a4,172(s0) # 400010ac <_eusrstack+0x1fffa8ac>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:535
+{
+     a88:	c226                	sw	s1,4(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:536
+    GPIOA_ResetBits( CS );
+     a8a:	6485                	lui	s1,0x1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:535
+{
+     a8c:	c04a                	sw	s2,0(sp)
+     a8e:	c606                	sw	ra,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:536
+    GPIOA_ResetBits( CS );
+     a90:	8f45                	or	a4,a4,s1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:535
+{
+     a92:	892a                	mv	s2,a0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:536
+    GPIOA_ResetBits( CS );
+     a94:	0ae42623          	sw	a4,172(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:537
+    __asm__("nop");
+     a98:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:538
+    Write_Data_H( 0x80, 4 );     //写入命令标志100
+     a9a:	4591                	li	a1,4
+     a9c:	08000513          	li	a0,128
+     aa0:	37bd                	jal	a0e <Write_Data_H>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:539
+    Write_Data_H( Cmd, 8 );      //写入命令数据
+     aa2:	45a1                	li	a1,8
+     aa4:	854a                	mv	a0,s2
+     aa6:	37a5                	jal	a0e <Write_Data_H>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:540
+    GPIOA_SetBits( CS );
+     aa8:	0a842783          	lw	a5,168(s0)
+     aac:	8fc5                	or	a5,a5,s1
+     aae:	0af42423          	sw	a5,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:541
+    __asm__("nop");
+     ab2:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:542
+}
+     ab4:	40b2                	lw	ra,12(sp)
+     ab6:	4422                	lw	s0,8(sp)
+     ab8:	4492                	lw	s1,4(sp)
+     aba:	4902                	lw	s2,0(sp)
+     abc:	0141                	addi	sp,sp,16
+     abe:	8082                	ret
+
+00000ac0 <lcd_xdigital>:
+lcd_xdigital():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:601
+
+static void lcd_xdigital(uchar pos, uchar xd)
+{
+    uchar addr1, addr2;
+
+    addr1 = xdigital_addr[(pos - 1) * 2];
+     ac0:	157d                	addi	a0,a0,-1
+     ac2:	00151793          	slli	a5,a0,0x1
+     ac6:	00000517          	auipc	a0,0x0
+     aca:	6a650513          	addi	a0,a0,1702 # 116c <xdigital_addr>
+     ace:	953e                	add	a0,a0,a5
+     ad0:	00054803          	lbu	a6,0(a0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:602
+    addr2 = xdigital_addr[(pos - 1) * 2 + 1];
+     ad4:	00000797          	auipc	a5,0x0
+     ad8:	6ac78793          	addi	a5,a5,1708 # 1180 <xdigital_data>
+     adc:	95be                	add	a1,a1,a5
+     ade:	0005c783          	lbu	a5,0(a1)
+     ae2:	00185613          	srli	a2,a6,0x1
+     ae6:	20000717          	auipc	a4,0x20000
+     aea:	df670713          	addi	a4,a4,-522 # 200008dc <gs_lcd_ram>
+     aee:	963a                	add	a2,a2,a4
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:604
+
+    if(addr1 % 2)
+     af0:	00187813          	andi	a6,a6,1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:602
+    addr2 = xdigital_addr[(pos - 1) * 2 + 1];
+     af4:	00154503          	lbu	a0,1(a0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:604
+    if(addr1 % 2)
+     af8:	00060683          	lb	a3,0(a2)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:605
+        gs_lcd_ram[addr1 >> 1] |= ((xdigital_data[xd] & 0x0F) << 4);
+     afc:	00479593          	slli	a1,a5,0x4
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:604
+    if(addr1 % 2)
+     b00:	00081463          	bnez	a6,b08 <lcd_xdigital+0x48>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:607
+    else
+        gs_lcd_ram[addr1 >> 1] |= (xdigital_data[xd] & 0x0F);
+     b04:	00f7f593          	andi	a1,a5,15
+     b08:	8ecd                	or	a3,a3,a1
+     b0a:	00d60023          	sb	a3,0(a2)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:609
+
+    if(addr2 % 2)
+     b0e:	00155693          	srli	a3,a0,0x1
+     b12:	9736                	add	a4,a4,a3
+     b14:	8905                	andi	a0,a0,1
+     b16:	00074683          	lbu	a3,0(a4)
+     b1a:	c511                	beqz	a0,b26 <lcd_xdigital+0x66>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:610
+        gs_lcd_ram[addr2 >> 1] |= (xdigital_data[xd] & 0xF0);
+     b1c:	9bc1                	andi	a5,a5,-16
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:612
+    else
+        gs_lcd_ram[addr2 >> 1] |= ((xdigital_data[xd] & 0xF0) >> 4);
+     b1e:	8fd5                	or	a5,a5,a3
+     b20:	00f70023          	sb	a5,0(a4)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:615
+
+    return;
+}
+     b24:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:612
+        gs_lcd_ram[addr2 >> 1] |= ((xdigital_data[xd] & 0xF0) >> 4);
+     b26:	8391                	srli	a5,a5,0x4
+     b28:	bfdd                	j	b1e <lcd_xdigital+0x5e>
+
+00000b2a <lcd_flag>:
+lcd_flag():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:618
+
+static void lcd_flag(uint flags)
+{
+     b2a:	1141                	addi	sp,sp,-16
+     b2c:	c422                	sw	s0,8(sp)
+     b2e:	c606                	sw	ra,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:621
+    uchar i;
+
+    if(flags & LCD_F_P) {
+     b30:	01451793          	slli	a5,a0,0x14
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:618
+{
+     b34:	842a                	mv	s0,a0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:622
+        lcd_xdigital(1, 17);
+     b36:	45c5                	li	a1,17
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:621
+    if(flags & LCD_F_P) {
+     b38:	0007c763          	bltz	a5,b46 <lcd_flag+0x1c>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:624
+    }
+    else if(flags & LCD_F_I) {
+     b3c:	01351793          	slli	a5,a0,0x13
+     b40:	0607d263          	bgez	a5,ba4 <lcd_flag+0x7a>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:625
+        lcd_xdigital(1, 18);
+     b44:	45c9                	li	a1,18
+     b46:	4505                	li	a0,1
+     b48:	3fa5                	jal	ac0 <lcd_xdigital>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:618
+{
+     b4a:	4781                	li	a5,0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:632
+    else if(flags & LCD_F_U) {
+        lcd_xdigital(1, 19);
+    }
+
+    for(i = 0; i < sizeof(flag_data); i++) {
+        if(flags & (1 << i)) {
+     b4c:	4805                	li	a6,1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:633
+            uchar addr = flag_addr[i];
+     b4e:	00000897          	auipc	a7,0x0
+     b52:	60688893          	addi	a7,a7,1542 # 1154 <flag_addr>
+     b56:	20000317          	auipc	t1,0x20000
+     b5a:	d8630313          	addi	t1,t1,-634 # 200008dc <gs_lcd_ram>
+     b5e:	00000e17          	auipc	t3,0x0
+     b62:	602e0e13          	addi	t3,t3,1538 # 1160 <flag_data>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:631
+    for(i = 0; i < sizeof(flag_data); i++) {
+     b66:	452d                	li	a0,11
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:632
+        if(flags & (1 << i)) {
+     b68:	00f81733          	sll	a4,a6,a5
+     b6c:	8f61                	and	a4,a4,s0
+     b6e:	c705                	beqz	a4,b96 <lcd_flag+0x6c>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:633
+            uchar addr = flag_addr[i];
+     b70:	00f88733          	add	a4,a7,a5
+     b74:	00074583          	lbu	a1,0(a4)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:635
+
+            if(addr % 2)
+     b78:	00fe06b3          	add	a3,t3,a5
+     b7c:	0006c683          	lbu	a3,0(a3) # 4000 <_data_lma+0x2e58>
+     b80:	0015d613          	srli	a2,a1,0x1
+     b84:	961a                	add	a2,a2,t1
+     b86:	8985                	andi	a1,a1,1
+     b88:	00060703          	lb	a4,0(a2)
+     b8c:	c195                	beqz	a1,bb0 <lcd_flag+0x86>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:636
+                gs_lcd_ram[addr >> 1] |= ((flag_data[i] << 4) & 0xF0);
+     b8e:	0692                	slli	a3,a3,0x4
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:638
+            else
+                gs_lcd_ram[addr >> 1] |= (flag_data[i] & 0x0F);
+     b90:	8f55                	or	a4,a4,a3
+     b92:	00e60023          	sb	a4,0(a2)
+     b96:	0785                	addi	a5,a5,1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:631 (discriminator 2)
+    for(i = 0; i < sizeof(flag_data); i++) {
+     b98:	fca798e3          	bne	a5,a0,b68 <lcd_flag+0x3e>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:641
+        }
+    }
+}
+     b9c:	40b2                	lw	ra,12(sp)
+     b9e:	4422                	lw	s0,8(sp)
+     ba0:	0141                	addi	sp,sp,16
+     ba2:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:627
+    else if(flags & LCD_F_U) {
+     ba4:	01251793          	slli	a5,a0,0x12
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:628
+        lcd_xdigital(1, 19);
+     ba8:	45cd                	li	a1,19
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:627
+    else if(flags & LCD_F_U) {
+     baa:	fa07d0e3          	bgez	a5,b4a <lcd_flag+0x20>
+     bae:	bf61                	j	b46 <lcd_flag+0x1c>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:638
+                gs_lcd_ram[addr >> 1] |= (flag_data[i] & 0x0F);
+     bb0:	8abd                	andi	a3,a3,15
+     bb2:	bff9                	j	b90 <lcd_flag+0x66>
+
+00000bb4 <lcd_blank>:
+lcd_blank():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:589
+    memset( gs_lcd_ram, 0x00, sizeof(gs_lcd_ram) );
+     bb4:	20000797          	auipc	a5,0x20000
+     bb8:	d2878793          	addi	a5,a5,-728 # 200008dc <gs_lcd_ram>
+     bbc:	0007a023          	sw	zero,0(a5)
+     bc0:	0007a223          	sw	zero,4(a5)
+     bc4:	0007a423          	sw	zero,8(a5)
+     bc8:	0007a623          	sw	zero,12(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:590
+}
+     bcc:	8082                	ret
+
+00000bce <lcd_xdigitals>:
+lcd_xdigitals():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:646
+
+static void lcd_xdigitals(
+    uchar *xdigitals, uchar len, uchar pos,
+    uint flags, uchar neg)
+{
+     bce:	1101                	addi	sp,sp,-32
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:650
+    uchar i;
+    uchar cur_pos;
+
+    if(!xdigitals || pos < 1 || pos > 8)
+     bd0:	fff60793          	addi	a5,a2,-1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:646
+{
+     bd4:	c64e                	sw	s3,12(sp)
+     bd6:	ce06                	sw	ra,28(sp)
+     bd8:	89b6                	mv	s3,a3
+     bda:	cc22                	sw	s0,24(sp)
+     bdc:	ca26                	sw	s1,20(sp)
+     bde:	c84a                	sw	s2,16(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:650
+    if(!xdigitals || pos < 1 || pos > 8)
+     be0:	0ff7f793          	andi	a5,a5,255
+     be4:	469d                	li	a3,7
+     be6:	00f6eb63          	bltu	a3,a5,bfc <lcd_xdigitals+0x2e>
+     bea:	84aa                	mv	s1,a0
+     bec:	842e                	mv	s0,a1
+     bee:	8532                	mv	a0,a2
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:653
+        return;
+
+    if(neg) {
+     bf0:	00c587b3          	add	a5,a1,a2
+     bf4:	cb19                	beqz	a4,c0a <lcd_xdigitals+0x3c>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:654
+        if((pos + len) > 8)
+     bf6:	4721                	li	a4,8
+     bf8:	02f75b63          	bge	a4,a5,c2e <lcd_xdigitals+0x60>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:678
+    if(flags) {
+        lcd_flag(flags);
+    }
+
+    return;
+}
+     bfc:	40f2                	lw	ra,28(sp)
+     bfe:	4462                	lw	s0,24(sp)
+     c00:	44d2                	lw	s1,20(sp)
+     c02:	4942                	lw	s2,16(sp)
+     c04:	49b2                	lw	s3,12(sp)
+     c06:	6105                	addi	sp,sp,32
+     c08:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:658
+        if((pos + len - 1) > 8)
+     c0a:	4725                	li	a4,9
+     c0c:	fef748e3          	blt	a4,a5,bfc <lcd_xdigitals+0x2e>
+     c10:	942a                	add	s0,s0,a0
+     c12:	0ff47413          	andi	s0,s0,255
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:668
+    for (i = 0; i < len; i++)
+     c16:	02a41463          	bne	s0,a0,c3e <lcd_xdigitals+0x70>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:673
+    if(flags) {
+     c1a:	fe0981e3          	beqz	s3,bfc <lcd_xdigitals+0x2e>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:678
+}
+     c1e:	4462                	lw	s0,24(sp)
+     c20:	40f2                	lw	ra,28(sp)
+     c22:	44d2                	lw	s1,20(sp)
+     c24:	4942                	lw	s2,16(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:674
+        lcd_flag(flags);
+     c26:	854e                	mv	a0,s3
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:678
+}
+     c28:	49b2                	lw	s3,12(sp)
+     c2a:	6105                	addi	sp,sp,32
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:674
+        lcd_flag(flags);
+     c2c:	bdfd                	j	b2a <lcd_flag>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:665
+        lcd_xdigital(cur_pos++, 16);
+     c2e:	00160913          	addi	s2,a2,1
+     c32:	45c1                	li	a1,16
+     c34:	0ff97913          	andi	s2,s2,255
+     c38:	3561                	jal	ac0 <lcd_xdigital>
+     c3a:	854a                	mv	a0,s2
+     c3c:	bfd1                	j	c10 <lcd_xdigitals+0x42>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:670
+        lcd_xdigital(cur_pos++, xdigitals[i]);
+     c3e:	0004c583          	lbu	a1,0(s1) # 1000 <GetSysClock+0x2e>
+     c42:	00150913          	addi	s2,a0,1
+     c46:	0ff97913          	andi	s2,s2,255
+     c4a:	3d9d                	jal	ac0 <lcd_xdigital>
+     c4c:	0485                	addi	s1,s1,1
+     c4e:	854a                	mv	a0,s2
+     c50:	b7d9                	j	c16 <lcd_xdigitals+0x48>
+
+00000c52 <lcd_flush>:
+WriteAllData():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:570
+    GPIOA_ResetBits( CS );
+     c52:	40001737          	lui	a4,0x40001
+     c56:	0ac72783          	lw	a5,172(a4) # 400010ac <_eusrstack+0x1fffa8ac>
+     c5a:	6685                	lui	a3,0x1
+lcd_flush():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:583
+{
+     c5c:	1141                	addi	sp,sp,-16
+WriteAllData():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:570
+    GPIOA_ResetBits( CS );
+     c5e:	8fd5                	or	a5,a5,a3
+lcd_flush():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:583
+{
+     c60:	c606                	sw	ra,12(sp)
+WriteAllData():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:570
+    GPIOA_ResetBits( CS );
+     c62:	0af72623          	sw	a5,172(a4)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:571
+    Write_Data_H( 0xa0, 3 );
+     c66:	458d                	li	a1,3
+     c68:	0a000513          	li	a0,160
+     c6c:	334d                	jal	a0e <Write_Data_H>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:572
+    Write_Data_H( Addr << 2, 6 );
+     c6e:	4599                	li	a1,6
+     c70:	4501                	li	a0,0
+     c72:	3b71                	jal	a0e <Write_Data_H>
+     c74:	20000697          	auipc	a3,0x20000
+     c78:	c6868693          	addi	a3,a3,-920 # 200008dc <gs_lcd_ram>
+Write_Data_L():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:519
+        GPIOA_ResetBits( WRITE );
+     c7c:	400017b7          	lui	a5,0x40001
+     c80:	6309                	lui	t1,0x2
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:523
+            GPIOA_ResetBits( DATA );
+     c82:	6591                	lui	a1,0x4
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:526
+        GPIOA_SetBits( WRITE );
+     c84:	40001637          	lui	a2,0x40001
+     c88:	6e89                	lui	t4,0x2
+WriteAllData():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:573
+    for( i = 0; i < cnt; i++ )
+     c8a:	81418e13          	addi	t3,gp,-2028 # 200008ec <_ebss>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:575
+        Write_Data_L( *p, 8 );
+     c8e:	0006c503          	lbu	a0,0(a3)
+     c92:	4721                	li	a4,8
+Write_Data_L():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:519
+        GPIOA_ResetBits( WRITE );
+     c94:	0ac7a803          	lw	a6,172(a5) # 400010ac <_eusrstack+0x1fffa8ac>
+     c98:	00686833          	or	a6,a6,t1
+     c9c:	0b07a623          	sw	a6,172(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:520
+        if( Data & 0x01 )                           //从低位发送
+     ca0:	00157813          	andi	a6,a0,1
+     ca4:	04080f63          	beqz	a6,d02 <lcd_flush+0xb0>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:521
+            GPIOA_SetBits( DATA );
+     ca8:	0a87a803          	lw	a6,168(a5)
+     cac:	00b86833          	or	a6,a6,a1
+     cb0:	0b07a423          	sw	a6,168(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:524
+        __asm__("nop");
+     cb4:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:525
+        __asm__("nop");
+     cb6:	0001                	nop
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:526
+        GPIOA_SetBits( WRITE );
+     cb8:	0a87a803          	lw	a6,168(a5)
+     cbc:	177d                	addi	a4,a4,-1
+     cbe:	0ff77713          	andi	a4,a4,255
+     cc2:	00686833          	or	a6,a6,t1
+     cc6:	0b07a423          	sw	a6,168(a5)
+     cca:	0a878893          	addi	a7,a5,168
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:527
+        Data >>= 1;
+     cce:	8105                	srli	a0,a0,0x1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:517
+    for( i = 0; i < Cnt; i++ )
+     cd0:	f371                	bnez	a4,c94 <lcd_flush+0x42>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:529
+    GPIOA_ResetBits( WRITE );
+     cd2:	0ac62703          	lw	a4,172(a2) # 400010ac <_eusrstack+0x1fffa8ac>
+WriteAllData():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:576
+        p++;
+     cd6:	0685                	addi	a3,a3,1
+Write_Data_L():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:529
+    GPIOA_ResetBits( WRITE );
+     cd8:	01d76733          	or	a4,a4,t4
+     cdc:	0ae62623          	sw	a4,172(a2)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:530
+    GPIOA_ResetBits( DATA );
+     ce0:	0ac62703          	lw	a4,172(a2)
+     ce4:	8f4d                	or	a4,a4,a1
+     ce6:	0ae62623          	sw	a4,172(a2)
+WriteAllData():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:573
+    for( i = 0; i < cnt; i++ )
+     cea:	fbc692e3          	bne	a3,t3,c8e <lcd_flush+0x3c>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:578
+    GPIOA_SetBits( CS );
+     cee:	0a87a783          	lw	a5,168(a5)
+     cf2:	6705                	lui	a4,0x1
+     cf4:	8fd9                	or	a5,a5,a4
+     cf6:	00f8a023          	sw	a5,0(a7)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:579
+    __asm__("nop");
+     cfa:	0001                	nop
+lcd_flush():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:585
+}
+     cfc:	40b2                	lw	ra,12(sp)
+     cfe:	0141                	addi	sp,sp,16
+     d00:	8082                	ret
+Write_Data_L():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:523
+            GPIOA_ResetBits( DATA );
+     d02:	0ac7a803          	lw	a6,172(a5)
+     d06:	00b86833          	or	a6,a6,a1
+     d0a:	0b07a623          	sw	a6,172(a5)
+     d0e:	b75d                	j	cb4 <lcd_flush+0x62>
+
+00000d10 <lcd_disp_blank>:
+lcd_disp_blank():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:681
+
+void lcd_disp_blank( void )
+{
+     d10:	1141                	addi	sp,sp,-16
+     d12:	c606                	sw	ra,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:682
+    lcd_blank();
+     d14:	3545                	jal	bb4 <lcd_blank>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:684
+    lcd_flush();
+}
+     d16:	40b2                	lw	ra,12(sp)
+     d18:	0141                	addi	sp,sp,16
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:683
+    lcd_flush();
+     d1a:	bf25                	j	c52 <lcd_flush>
+
+00000d1c <lcd_disp_num>:
+lcd_disp_num():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:734
+
+    return;
+}
+
+void lcd_disp_num(int num, uchar dot_size, uint flags, uchar base)
+{
+     d1c:	7179                	addi	sp,sp,-48
+     d1e:	ce4e                	sw	s3,28(sp)
+     d20:	ca56                	sw	s5,20(sp)
+     d22:	d606                	sw	ra,44(sp)
+     d24:	d422                	sw	s0,40(sp)
+     d26:	d226                	sw	s1,36(sp)
+     d28:	d04a                	sw	s2,32(sp)
+     d2a:	cc52                	sw	s4,24(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:741
+    uchar i;
+    uchar count;
+    uchar int_ct;
+    uchar xdigitals[8];
+
+    if(base != 10 && base != 16)
+     d2c:	47a9                	li	a5,10
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:734
+{
+     d2e:	89ae                	mv	s3,a1
+     d30:	8ab2                	mv	s5,a2
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:741
+    if(base != 10 && base != 16)
+     d32:	00f68563          	beq	a3,a5,d3c <lcd_disp_num+0x20>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:741 (discriminator 1)
+     d36:	47c1                	li	a5,16
+     d38:	0cf69a63          	bne	a3,a5,e0c <lcd_disp_num+0xf0>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:744
+        return;
+
+    if(dot_size > 2)
+     d3c:	4789                	li	a5,2
+     d3e:	0d37e763          	bltu	a5,s3,e0c <lcd_disp_num+0xf0>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:749
+        return;
+
+    count = 8;
+    int_ct = 8;
+    if(num < 0) {
+     d42:	06055063          	bgez	a0,da2 <lcd_disp_num+0x86>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:751
+        neg = 1;
+        num *= (-1);
+     d46:	40a00533          	neg	a0,a0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:754
+    }
+
+    if(dot_size == 0) {
+     d4a:	02098063          	beqz	s3,d6a <lcd_disp_num+0x4e>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:764
+        else {
+            count = 8;
+            int_ct = 8;
+        }
+    }
+    else if(dot_size == 1) {
+     d4e:	4785                	li	a5,1
+     d50:	4905                	li	s2,1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:767
+        if(neg) {
+            count = 6;
+            int_ct = 5;
+     d52:	4415                	li	s0,5
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:764
+    else if(dot_size == 1) {
+     d54:	00f99963          	bne	s3,a5,d66 <lcd_disp_num+0x4a>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:766
+            count = 6;
+     d58:	4799                	li	a5,6
+     d5a:	a889                	j	dac <lcd_disp_num+0x90>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:764
+    else if(dot_size == 1) {
+     d5c:	4785                	li	a5,1
+     d5e:	4901                	li	s2,0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:771
+        }
+        else {
+            count = 7;
+            int_ct = 6;
+     d60:	4419                	li	s0,6
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:764
+    else if(dot_size == 1) {
+     d62:	04f99463          	bne	s3,a5,daa <lcd_disp_num+0x8e>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:776
+        }
+    }
+    else if(dot_size == 2) {
+        if(neg) {
+            count = 7;
+     d66:	479d                	li	a5,7
+     d68:	a091                	j	dac <lcd_disp_num+0x90>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:750
+        neg = 1;
+     d6a:	4905                	li	s2,1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:757
+            int_ct = 7;
+     d6c:	441d                	li	s0,7
+     d6e:	bfe5                	j	d66 <lcd_disp_num+0x4a>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:799
+
+    if(i == int_ct) {
+        i = 1;
+        xdigitals[0] = 0;
+    }
+    else if(i != 0) {
+     d70:	84a2                	mv	s1,s0
+     d72:	c5b5                	beqz	a1,dde <lcd_disp_num+0xc2>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:800
+        memcpy(&xdigitals[0], &xdigitals[i], int_ct - i);
+     d74:	40b404b3          	sub	s1,s0,a1
+     d78:	8626                	mv	a2,s1
+     d7a:	95d2                	add	a1,a1,s4
+     d7c:	8552                	mv	a0,s4
+     d7e:	2e39                	jal	109c <memcpy>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:801
+        i = int_ct - i;
+     d80:	0ff4f493          	andi	s1,s1,255
+     d84:	a8a9                	j	dde <lcd_disp_num+0xc2>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:816
+            int_ct - i + 1, flags & ((~LCD_F_DOT) & 0xFFFFFFFF), neg);
+        lcd_xdigitals(&xdigitals[int_ct], dot_size, 7, LCD_F_DOT, 0);
+        lcd_flush();
+    }
+    else {
+        lcd_blank();
+     d86:	353d                	jal	bb4 <lcd_blank>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:818
+        lcd_xdigitals(&xdigitals[0], i,
+            (int_ct - i) / 2 + 1, flags & ((~LCD_F_DOT) & 0xFFFFFFFF), neg);
+     d88:	40940633          	sub	a2,s0,s1
+     d8c:	4409                	li	s0,2
+     d8e:	02864633          	div	a2,a2,s0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:817
+        lcd_xdigitals(&xdigitals[0], i,
+     d92:	874a                	mv	a4,s2
+     d94:	86d6                	mv	a3,s5
+     d96:	85a6                	mv	a1,s1
+     d98:	8552                	mv	a0,s4
+     d9a:	0605                	addi	a2,a2,1
+     d9c:	0ff67613          	andi	a2,a2,255
+     da0:	a0a5                	j	e08 <lcd_disp_num+0xec>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:754
+    if(dot_size == 0) {
+     da2:	fa099de3          	bnez	s3,d5c <lcd_disp_num+0x40>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:735
+    uchar neg = 0;
+     da6:	4901                	li	s2,0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:761
+            int_ct = 8;
+     da8:	4421                	li	s0,8
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:760
+            count = 8;
+     daa:	47a1                	li	a5,8
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:785
+    for(i = 0; i < count; i++) {
+     dac:	00810a13          	addi	s4,sp,8
+     db0:	97d2                	add	a5,a5,s4
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:786 (discriminator 3)
+        xdigitals[count - i - 1] = num % base;
+     db2:	02d56733          	rem	a4,a0,a3
+     db6:	17fd                	addi	a5,a5,-1
+     db8:	00e78023          	sb	a4,0(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:787 (discriminator 3)
+        num = num / base;
+     dbc:	02d54533          	div	a0,a0,a3
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:785 (discriminator 3)
+    for(i = 0; i < count; i++) {
+     dc0:	fefa19e3          	bne	s4,a5,db2 <lcd_disp_num+0x96>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:790
+    for(i = 0; i < int_ct; i++) {
+     dc4:	4581                	li	a1,0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:791
+        if(xdigitals[i])
+     dc6:	0007c703          	lbu	a4,0(a5)
+     dca:	f35d                	bnez	a4,d70 <lcd_disp_num+0x54>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:790 (discriminator 2)
+    for(i = 0; i < int_ct; i++) {
+     dcc:	0585                	addi	a1,a1,1
+     dce:	0ff5f593          	andi	a1,a1,255
+     dd2:	0785                	addi	a5,a5,1
+     dd4:	feb419e3          	bne	s0,a1,dc6 <lcd_disp_num+0xaa>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:797
+        xdigitals[0] = 0;
+     dd8:	00010423          	sb	zero,8(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:796
+        i = 1;
+     ddc:	4485                	li	s1,1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:807
+    if(dot_size) {
+     dde:	ffeafa93          	andi	s5,s5,-2
+     de2:	fa0982e3          	beqz	s3,d86 <lcd_disp_num+0x6a>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:808
+        lcd_blank();
+     de6:	33f9                	jal	bb4 <lcd_blank>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:810
+        lcd_xdigitals(&xdigitals[0], i,
+     de8:	00140613          	addi	a2,s0,1
+     dec:	8e05                	sub	a2,a2,s1
+     dee:	874a                	mv	a4,s2
+     df0:	86d6                	mv	a3,s5
+     df2:	0ff67613          	andi	a2,a2,255
+     df6:	85a6                	mv	a1,s1
+     df8:	8552                	mv	a0,s4
+     dfa:	3bd1                	jal	bce <lcd_xdigitals>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:812
+        lcd_xdigitals(&xdigitals[int_ct], dot_size, 7, LCD_F_DOT, 0);
+     dfc:	4701                	li	a4,0
+     dfe:	4685                	li	a3,1
+     e00:	461d                	li	a2,7
+     e02:	85ce                	mv	a1,s3
+     e04:	008a0533          	add	a0,s4,s0
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:817
+        lcd_xdigitals(&xdigitals[0], i,
+     e08:	33d9                	jal	bce <lcd_xdigitals>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:819
+        lcd_flush();
+     e0a:	35a1                	jal	c52 <lcd_flush>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:823
+    }
+
+    return;
+}
+     e0c:	50b2                	lw	ra,44(sp)
+     e0e:	5422                	lw	s0,40(sp)
+     e10:	5492                	lw	s1,36(sp)
+     e12:	5902                	lw	s2,32(sp)
+     e14:	49f2                	lw	s3,28(sp)
+     e16:	4a62                	lw	s4,24(sp)
+     e18:	4ad2                	lw	s5,20(sp)
+     e1a:	6145                	addi	sp,sp,48
+     e1c:	8082                	ret
+
+00000e1e <lcd_disp_init>:
+lcd_disp_init():
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:876
+
+    return;
+}
+
+void lcd_disp_init(void)
+{
+     e1e:	1101                	addi	sp,sp,-32
+     e20:	cc22                	sw	s0,24(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:877
+    GPIOA_SetBits( CS );
+     e22:	40001437          	lui	s0,0x40001
+     e26:	0a842783          	lw	a5,168(s0) # 400010a8 <_eusrstack+0x1fffa8a8>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:876
+{
+     e2a:	c64e                	sw	s3,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:877
+    GPIOA_SetBits( CS );
+     e2c:	6985                	lui	s3,0x1
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:876
+{
+     e2e:	ce06                	sw	ra,28(sp)
+     e30:	ca26                	sw	s1,20(sp)
+     e32:	c84a                	sw	s2,16(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:877
+    GPIOA_SetBits( CS );
+     e34:	0137e7b3          	or	a5,a5,s3
+     e38:	0af42423          	sw	a5,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:878
+    GPIOA_ModeCfg( CS, GPIO_ModeOut_PP_5mA );
+     e3c:	458d                	li	a1,3
+     e3e:	6505                	lui	a0,0x1
+     e40:	20f5                	jal	f2c <GPIOA_ModeCfg>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:880
+
+    GPIOA_SetBits( WRITE );
+     e42:	0a842783          	lw	a5,168(s0)
+     e46:	6909                	lui	s2,0x2
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:881
+    GPIOA_ModeCfg( WRITE, GPIO_ModeOut_PP_5mA );
+     e48:	458d                	li	a1,3
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:880
+    GPIOA_SetBits( WRITE );
+     e4a:	0127e7b3          	or	a5,a5,s2
+     e4e:	0af42423          	sw	a5,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:881
+    GPIOA_ModeCfg( WRITE, GPIO_ModeOut_PP_5mA );
+     e52:	6509                	lui	a0,0x2
+     e54:	28e1                	jal	f2c <GPIOA_ModeCfg>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:883
+
+    GPIOA_SetBits( DATA );
+     e56:	0a842603          	lw	a2,168(s0)
+     e5a:	6491                	lui	s1,0x4
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:884
+    GPIOA_ModeCfg( DATA, GPIO_ModeOut_PP_5mA );
+     e5c:	458d                	li	a1,3
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:883
+    GPIOA_SetBits( DATA );
+     e5e:	8e45                	or	a2,a2,s1
+     e60:	0ac42423          	sw	a2,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:884
+    GPIOA_ModeCfg( DATA, GPIO_ModeOut_PP_5mA );
+     e64:	6511                	lui	a0,0x4
+     e66:	20d9                	jal	f2c <GPIOA_ModeCfg>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:886
+
+    GPIOA_SetBits( CS );
+     e68:	0a842683          	lw	a3,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:890
+    GPIOA_SetBits( WRITE );
+    GPIOA_SetBits( DATA );
+
+    WriteCmd( BIAS );         //1/3偏压 4公共口
+     e6c:	05200513          	li	a0,82
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:886
+    GPIOA_SetBits( CS );
+     e70:	0136e6b3          	or	a3,a3,s3
+     e74:	0ad42423          	sw	a3,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:887
+    GPIOA_SetBits( WRITE );
+     e78:	0a842703          	lw	a4,168(s0)
+     e7c:	01276733          	or	a4,a4,s2
+     e80:	0ae42423          	sw	a4,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:888
+    GPIOA_SetBits( DATA );
+     e84:	0a842783          	lw	a5,168(s0)
+     e88:	8fc5                	or	a5,a5,s1
+     e8a:	0af42423          	sw	a5,168(s0)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:890
+    WriteCmd( BIAS );         //1/3偏压 4公共口
+     e8e:	36fd                	jal	a7c <WriteCmd>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:891
+    WriteCmd( RC );           //内部RC振荡
+     e90:	03000513          	li	a0,48
+     e94:	36e5                	jal	a7c <WriteCmd>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:892
+    WriteCmd( SYSDIS );       //关系统振荡器和LCD偏压发生器
+     e96:	4501                	li	a0,0
+     e98:	36d5                	jal	a7c <WriteCmd>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:893
+    WriteCmd( SYSEN );        //打开系统振荡器
+     e9a:	4509                	li	a0,2
+     e9c:	36c5                	jal	a7c <WriteCmd>
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:906
+            if((j % 2) == 0)
+                lcd_flag(0xFFFF);
+            lcd_flush();
+        }
+    }*/
+}
+     e9e:	4462                	lw	s0,24(sp)
+     ea0:	40f2                	lw	ra,28(sp)
+     ea2:	44d2                	lw	s1,20(sp)
+     ea4:	4942                	lw	s2,16(sp)
+     ea6:	49b2                	lw	s3,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:894
+    WriteCmd( LCDON );        //开LCD偏压
+     ea8:	4519                	li	a0,6
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:906
+}
+     eaa:	6105                	addi	sp,sp,32
+C:\MRS_DATA\workspace\ADCt\obj/../User/lcd.c:894
+    WriteCmd( LCDON );        //开LCD偏压
+     eac:	bec1                	j	a7c <WriteCmd>
+
+00000eae <ADC_InterTSSampInit>:
+ADC_InterTSSampInit():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:112
+ *
+ * @return  none
+ */
+void ADC_InterTSSampInit(void)
+{
+    R8_TKEY_CFG &= ~RB_TKEY_PWR_ON;
+     eae:	400017b7          	lui	a5,0x40001
+     eb2:	0577c703          	lbu	a4,87(a5) # 40001057 <_eusrstack+0x1fffa857>
+     eb6:	0fe77713          	andi	a4,a4,254
+     eba:	04e78ba3          	sb	a4,87(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:113
+    R8_TEM_SENSOR = RB_TEM_SEN_PWR_ON;
+     ebe:	f8000713          	li	a4,-128
+     ec2:	04e78da3          	sb	a4,91(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:114
+    R8_ADC_CHANNEL = CH_INTE_VTEMP;
+     ec6:	473d                	li	a4,15
+     ec8:	04e78c23          	sb	a4,88(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:115
+    R8_ADC_CFG = RB_ADC_POWER_ON | RB_ADC_DIFF_EN | (3 << 4);
+     ecc:	03500713          	li	a4,53
+     ed0:	04e78ca3          	sb	a4,89(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:116
+    R8_ADC_CONVERT &= ~RB_ADC_PGA_GAIN2;
+     ed4:	05a7c703          	lbu	a4,90(a5)
+     ed8:	0fd77713          	andi	a4,a4,253
+     edc:	04e78d23          	sb	a4,90(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:117
+}
+     ee0:	8082                	ret
+
+00000ee2 <ADC_ExcutSingleConver>:
+ADC_ExcutSingleConver():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:163
+ *
+ * @return  ADC转换后的数据
+ */
+uint16_t ADC_ExcutSingleConver(void)
+{
+    R8_ADC_CONVERT |= RB_ADC_START;
+     ee2:	40001737          	lui	a4,0x40001
+     ee6:	05a74783          	lbu	a5,90(a4) # 4000105a <_eusrstack+0x1fffa85a>
+     eea:	0017e793          	ori	a5,a5,1
+     eee:	04f70d23          	sb	a5,90(a4)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:164 (discriminator 1)
+    while(R8_ADC_CONVERT & RB_ADC_START);
+     ef2:	05a74783          	lbu	a5,90(a4)
+     ef6:	8b85                	andi	a5,a5,1
+     ef8:	ffed                	bnez	a5,ef2 <ADC_ExcutSingleConver+0x10>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:166
+
+    return (R16_ADC_DATA & RB_ADC_DATA);
+     efa:	05c75503          	lhu	a0,92(a4)
+     efe:	0552                	slli	a0,a0,0x14
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:167
+}
+     f00:	8151                	srli	a0,a0,0x14
+     f02:	8082                	ret
+
+00000f04 <adc_to_temperature_celsius>:
+adc_to_temperature_celsius():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:250
+int adc_to_temperature_celsius(uint16_t adc_val)
+{
+    uint32_t C25 = 0;
+    int      temp;
+
+    C25 = (*((PUINT32)ROM_CFG_TMP_25C));
+     f04:	0007f7b7          	lui	a5,0x7f
+     f08:	4bdc                	lw	a5,20(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:253
+
+    /* current temperature = standard temperature + (adc deviation * adc linearity coefficient) */ 
+    temp = (((C25 >> 16) & 0xFFFF) ? ((C25 >> 16) & 0xFFFF) : 25) + \
+     f0a:	0107d713          	srli	a4,a5,0x10
+     f0e:	e311                	bnez	a4,f12 <adc_to_temperature_celsius+0xe>
+     f10:	4765                	li	a4,25
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:254
+        (adc_val - ((int)(C25 & 0xFFFF))) * 100 / 283;
+     f12:	07c2                	slli	a5,a5,0x10
+     f14:	83c1                	srli	a5,a5,0x10
+     f16:	8d1d                	sub	a0,a0,a5
+     f18:	06400793          	li	a5,100
+     f1c:	02f50533          	mul	a0,a0,a5
+     f20:	11b00793          	li	a5,283
+     f24:	02f54533          	div	a0,a0,a5
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_adc.c:257
+
+    return (temp);
+}
+     f28:	953a                	add	a0,a0,a4
+     f2a:	8082                	ret
+
+00000f2c <GPIOA_ModeCfg>:
+GPIOA_ModeCfg():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:27
+ *
+ * @return  none
+ */
+void GPIOA_ModeCfg(uint32_t pin, GPIOModeTypeDef mode)
+{
+    switch(mode)
+     f2c:	4791                	li	a5,4
+     f2e:	02b7ee63          	bltu	a5,a1,f6a <GPIOA_ModeCfg+0x3e>
+     f32:	00000717          	auipc	a4,0x0
+     f36:	26270713          	addi	a4,a4,610 # 1194 <xdigital_data+0x14>
+     f3a:	058a                	slli	a1,a1,0x2
+     f3c:	95ba                	add	a1,a1,a4
+     f3e:	419c                	lw	a5,0(a1)
+     f40:	97ba                	add	a5,a5,a4
+     f42:	8782                	jr	a5
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:30
+    {
+        case GPIO_ModeIN_Floating:
+            R32_PA_PD_DRV &= ~pin;
+     f44:	400017b7          	lui	a5,0x40001
+     f48:	0b47a703          	lw	a4,180(a5) # 400010b4 <_eusrstack+0x1fffa8b4>
+     f4c:	fff54513          	not	a0,a0
+     f50:	8f69                	and	a4,a4,a0
+     f52:	0ae7aa23          	sw	a4,180(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:31
+            R32_PA_PU &= ~pin;
+     f56:	0b07a703          	lw	a4,176(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:43
+            R32_PA_DIR &= ~pin;
+            break;
+
+        case GPIO_ModeIN_PD:
+            R32_PA_PD_DRV |= pin;
+            R32_PA_PU &= ~pin;
+     f5a:	8f69                	and	a4,a4,a0
+     f5c:	0ae7a823          	sw	a4,176(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:44
+            R32_PA_DIR &= ~pin;
+     f60:	0a07a703          	lw	a4,160(a5)
+     f64:	8d79                	and	a0,a0,a4
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:54
+            R32_PA_DIR |= pin;
+            break;
+
+        case GPIO_ModeOut_PP_20mA:
+            R32_PA_PD_DRV |= pin;
+            R32_PA_DIR |= pin;
+     f66:	0aa7a023          	sw	a0,160(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:60
+            break;
+
+        default:
+            break;
+    }
+}
+     f6a:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:36
+            R32_PA_PD_DRV &= ~pin;
+     f6c:	400017b7          	lui	a5,0x40001
+     f70:	0b47a683          	lw	a3,180(a5) # 400010b4 <_eusrstack+0x1fffa8b4>
+     f74:	fff54713          	not	a4,a0
+     f78:	8ef9                	and	a3,a3,a4
+     f7a:	0ad7aa23          	sw	a3,180(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:37
+            R32_PA_PU |= pin;
+     f7e:	0b07a683          	lw	a3,176(a5)
+     f82:	8d55                	or	a0,a0,a3
+     f84:	0aa7a823          	sw	a0,176(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:38
+            R32_PA_DIR &= ~pin;
+     f88:	0a07a683          	lw	a3,160(a5)
+     f8c:	8f75                	and	a4,a4,a3
+     f8e:	0ae7a023          	sw	a4,160(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:39
+            break;
+     f92:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:42
+            R32_PA_PD_DRV |= pin;
+     f94:	400017b7          	lui	a5,0x40001
+     f98:	0b47a703          	lw	a4,180(a5) # 400010b4 <_eusrstack+0x1fffa8b4>
+     f9c:	8f49                	or	a4,a4,a0
+     f9e:	0ae7aa23          	sw	a4,180(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:43
+            R32_PA_PU &= ~pin;
+     fa2:	0b07a703          	lw	a4,176(a5)
+     fa6:	fff54513          	not	a0,a0
+     faa:	bf45                	j	f5a <GPIOA_ModeCfg+0x2e>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:48
+            R32_PA_PD_DRV &= ~pin;
+     fac:	400017b7          	lui	a5,0x40001
+     fb0:	0b47a683          	lw	a3,180(a5) # 400010b4 <_eusrstack+0x1fffa8b4>
+     fb4:	fff54713          	not	a4,a0
+     fb8:	8f75                	and	a4,a4,a3
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:53
+            R32_PA_PD_DRV |= pin;
+     fba:	0ae7aa23          	sw	a4,180(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:54
+            R32_PA_DIR |= pin;
+     fbe:	0a07a703          	lw	a4,160(a5)
+     fc2:	8d59                	or	a0,a0,a4
+     fc4:	b74d                	j	f66 <GPIOA_ModeCfg+0x3a>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_gpio.c:53
+            R32_PA_PD_DRV |= pin;
+     fc6:	400017b7          	lui	a5,0x40001
+     fca:	0b47a703          	lw	a4,180(a5) # 400010b4 <_eusrstack+0x1fffa8b4>
+     fce:	8f49                	or	a4,a4,a0
+     fd0:	b7ed                	j	fba <GPIOA_ModeCfg+0x8e>
+
+00000fd2 <GetSysClock>:
+GetSysClock():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:84
+    rev = R32_CLK_SYS_CFG & 0xff;
+     fd2:	400017b7          	lui	a5,0x40001
+     fd6:	4788                	lw	a0,8(a5)
+     fd8:	0542                	slli	a0,a0,0x10
+     fda:	8141                	srli	a0,a0,0x10
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:85
+    if((rev & 0x40) == (0 << 6))
+     fdc:	04057793          	andi	a5,a0,64
+     fe0:	eb91                	bnez	a5,ff4 <GetSysClock+0x22>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:87
+        return (32000000 / (rev & 0x1f));
+     fe2:	01f57793          	andi	a5,a0,31
+     fe6:	01e85537          	lui	a0,0x1e85
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:91
+        return (480000000 / (rev & 0x1f));
+     fea:	80050513          	addi	a0,a0,-2048 # 1e84800 <_data_lma+0x1e83658>
+     fee:	02f54533          	div	a0,a0,a5
+     ff2:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:89
+    else if((rev & RB_CLK_SYS_MOD) == (1 << 6))
+     ff4:	0c057793          	andi	a5,a0,192
+     ff8:	04000713          	li	a4,64
+     ffc:	00e79763          	bne	a5,a4,100a <GetSysClock+0x38>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:91
+        return (480000000 / (rev & 0x1f));
+    1000:	01f57793          	andi	a5,a0,31
+    1004:	1c9c4537          	lui	a0,0x1c9c4
+    1008:	b7cd                	j	fea <GetSysClock+0x18>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:95
+        return (32000);
+    100a:	6521                	lui	a0,0x8
+    100c:	d0050513          	addi	a0,a0,-768 # 7d00 <_data_lma+0x6b58>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_sys.c:97
+}
+    1010:	8082                	ret
+
+00001012 <UART3_BaudRateCfg>:
+UART3_BaudRateCfg():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:43
+ * @param   baudrate    - 波特率
+ *
+ * @return  none
+ */
+void UART3_BaudRateCfg(uint32_t baudrate)
+{
+    1012:	1141                	addi	sp,sp,-16
+    1014:	c422                	sw	s0,8(sp)
+    1016:	c606                	sw	ra,12(sp)
+    1018:	842a                	mv	s0,a0
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:46
+    uint32_t x;
+
+    x = 10 * GetSysClock() / 8 / baudrate;
+    101a:	3f65                	jal	fd2 <GetSysClock>
+    101c:	4729                	li	a4,10
+    101e:	02e507b3          	mul	a5,a0,a4
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:49
+    x = (x + 5) / 10;
+    R16_UART3_DL = (uint16_t)x;
+}
+    1022:	40b2                	lw	ra,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:46
+    x = 10 * GetSysClock() / 8 / baudrate;
+    1024:	838d                	srli	a5,a5,0x3
+    1026:	0287d7b3          	divu	a5,a5,s0
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:49
+}
+    102a:	4422                	lw	s0,8(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:47
+    x = (x + 5) / 10;
+    102c:	0795                	addi	a5,a5,5
+    102e:	02e7d7b3          	divu	a5,a5,a4
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:48
+    R16_UART3_DL = (uint16_t)x;
+    1032:	40004737          	lui	a4,0x40004
+    1036:	07c2                	slli	a5,a5,0x10
+    1038:	83c1                	srli	a5,a5,0x10
+    103a:	c0f71623          	sh	a5,-1012(a4) # 40003c0c <_eusrstack+0x1fffd40c>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:49
+}
+    103e:	0141                	addi	sp,sp,16
+    1040:	8082                	ret
+
+00001042 <UART3_DefInit>:
+UART3_DefInit():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:26
+    UART3_BaudRateCfg(115200);
+    1042:	6571                	lui	a0,0x1c
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:25
+{
+    1044:	1141                	addi	sp,sp,-16
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:26
+    UART3_BaudRateCfg(115200);
+    1046:	20050513          	addi	a0,a0,512 # 1c200 <_data_lma+0x1b058>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:25
+{
+    104a:	c606                	sw	ra,12(sp)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:26
+    UART3_BaudRateCfg(115200);
+    104c:	37d9                	jal	1012 <UART3_BaudRateCfg>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:27
+    R8_UART3_FCR = (2 << 6) | RB_FCR_TX_FIFO_CLR | RB_FCR_RX_FIFO_CLR | RB_FCR_FIFO_EN; // FIFO打开，触发点4字节
+    104e:	400047b7          	lui	a5,0x40004
+    1052:	f8700713          	li	a4,-121
+    1056:	c0e78123          	sb	a4,-1022(a5) # 40003c02 <_eusrstack+0x1fffd402>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:28
+    R8_UART3_LCR = RB_LCR_WORD_SZ;
+    105a:	470d                	li	a4,3
+    105c:	c0e781a3          	sb	a4,-1021(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:29
+    R8_UART3_IER = RB_IER_TXD_EN;
+    1060:	04000713          	li	a4,64
+    1064:	c0e780a3          	sb	a4,-1023(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:30
+    R8_UART3_DIV = 1;
+    1068:	4705                	li	a4,1
+    106a:	c0e78723          	sb	a4,-1010(a5)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:31
+}
+    106e:	40b2                	lw	ra,12(sp)
+    1070:	0141                	addi	sp,sp,16
+    1072:	8082                	ret
+
+00001074 <UART3_SendString>:
+UART3_SendString():
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:122
+{
+    uint16_t len = l;
+
+    while(len)
+    {
+        if(R8_UART3_TFC != UART_FIFO_SIZE)
+    1074:	400047b7          	lui	a5,0x40004
+    1078:	4721                	li	a4,8
+    107a:	400046b7          	lui	a3,0x40004
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:120
+    while(len)
+    107e:	e191                	bnez	a1,1082 <UART3_SendString+0xe>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:128
+        {
+            R8_UART3_THR = *buf++;
+            len--;
+        }
+    }
+}
+    1080:	8082                	ret
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:122
+        if(R8_UART3_TFC != UART_FIFO_SIZE)
+    1082:	c0b7c603          	lbu	a2,-1013(a5) # 40003c0b <_eusrstack+0x1fffd40b>
+    1086:	fec70ce3          	beq	a4,a2,107e <UART3_SendString+0xa>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:124
+            R8_UART3_THR = *buf++;
+    108a:	0505                	addi	a0,a0,1
+    108c:	fff54603          	lbu	a2,-1(a0)
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:125
+            len--;
+    1090:	15fd                	addi	a1,a1,-1
+    1092:	05c2                	slli	a1,a1,0x10
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:124
+            R8_UART3_THR = *buf++;
+    1094:	c0c68423          	sb	a2,-1016(a3) # 40003c08 <_eusrstack+0x1fffd408>
+C:\MRS_DATA\workspace\ADCt\obj/../StdPeriphDriver/CH59x_uart3.c:125
+            len--;
+    1098:	81c1                	srli	a1,a1,0x10
+    109a:	b7d5                	j	107e <UART3_SendString+0xa>
+
+0000109c <memcpy>:
+memcpy():
+    109c:	00a5c7b3          	xor	a5,a1,a0
+    10a0:	8b8d                	andi	a5,a5,3
+    10a2:	00c50733          	add	a4,a0,a2
+    10a6:	e781                	bnez	a5,10ae <memcpy+0x12>
+    10a8:	478d                	li	a5,3
+    10aa:	00c7ee63          	bltu	a5,a2,10c6 <memcpy+0x2a>
+    10ae:	87aa                	mv	a5,a0
+    10b0:	0ae57063          	bgeu	a0,a4,1150 <memcpy+0xb4>
+    10b4:	0005c683          	lbu	a3,0(a1) # 4000 <_data_lma+0x2e58>
+    10b8:	0785                	addi	a5,a5,1
+    10ba:	0585                	addi	a1,a1,1
+    10bc:	fed78fa3          	sb	a3,-1(a5)
+    10c0:	fee7eae3          	bltu	a5,a4,10b4 <memcpy+0x18>
+    10c4:	8082                	ret
+    10c6:	00357693          	andi	a3,a0,3
+    10ca:	87aa                	mv	a5,a0
+    10cc:	ca91                	beqz	a3,10e0 <memcpy+0x44>
+    10ce:	0005c683          	lbu	a3,0(a1)
+    10d2:	0785                	addi	a5,a5,1
+    10d4:	0585                	addi	a1,a1,1
+    10d6:	fed78fa3          	sb	a3,-1(a5)
+    10da:	0037f693          	andi	a3,a5,3
+    10de:	b7fd                	j	10cc <memcpy+0x30>
+    10e0:	ffc77693          	andi	a3,a4,-4
+    10e4:	fe068613          	addi	a2,a3,-32
+    10e8:	06c7f063          	bgeu	a5,a2,1148 <memcpy+0xac>
+    10ec:	0005a383          	lw	t2,0(a1)
+    10f0:	0045a283          	lw	t0,4(a1)
+    10f4:	0085af83          	lw	t6,8(a1)
+    10f8:	00c5af03          	lw	t5,12(a1)
+    10fc:	0105ae83          	lw	t4,16(a1)
+    1100:	0145ae03          	lw	t3,20(a1)
+    1104:	0185a303          	lw	t1,24(a1)
+    1108:	01c5a883          	lw	a7,28(a1)
+    110c:	02458593          	addi	a1,a1,36
+    1110:	0077a023          	sw	t2,0(a5)
+    1114:	ffc5a803          	lw	a6,-4(a1)
+    1118:	0057a223          	sw	t0,4(a5)
+    111c:	01f7a423          	sw	t6,8(a5)
+    1120:	01e7a623          	sw	t5,12(a5)
+    1124:	01d7a823          	sw	t4,16(a5)
+    1128:	01c7aa23          	sw	t3,20(a5)
+    112c:	0067ac23          	sw	t1,24(a5)
+    1130:	0117ae23          	sw	a7,28(a5)
+    1134:	02478793          	addi	a5,a5,36
+    1138:	ff07ae23          	sw	a6,-4(a5)
+    113c:	b775                	j	10e8 <memcpy+0x4c>
+    113e:	4190                	lw	a2,0(a1)
+    1140:	0791                	addi	a5,a5,4
+    1142:	0591                	addi	a1,a1,4
+    1144:	fec7ae23          	sw	a2,-4(a5)
+    1148:	fed7ebe3          	bltu	a5,a3,113e <memcpy+0xa2>
+    114c:	f6e7e4e3          	bltu	a5,a4,10b4 <memcpy+0x18>
+    1150:	8082                	ret
+	...
+
+00001154 <flag_addr>:
+    1154:	1d12 1d1d 1a1e 1e1c 011e 0003               ............
+
+00001160 <flag_data>:
+    1160:	0108 0804 0801 0208 0804 0008               ............
+
+0000116c <xdigital_addr>:
+    116c:	0100 0302 0504 0e0d 100f 1211 1a13 1c1b     ................
+    117c:	1e1d 0000                                   ....
+
+00001180 <xdigital_data>:
+    1180:	607d 7a3e 5b63 705f 7b7f 4f77 6e1d 171f     }`>zc[_p.{wO.n..
+    1190:	3702 6d05 fdb0 ffff fdd8 ffff fe00 ffff     .7.m............
+    11a0:	fe18 ffff fe32 ffff                         ....2...
